@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         mCardRecycler = (RecyclerView) findViewById(R.id.card_recycler);
         mCardRecycler.setLayoutManager(new LinearLayoutManager(this));
         //Code to build list of pojos for card list
+
 //        CardRecycleAdapter cardAdapter = new CardRecycleAdapter();
 //        cardAdapter.setCardHolderList(); // argument is list of pojo objects
 //        mCardRecycler.setAdapter(cardAdapter);

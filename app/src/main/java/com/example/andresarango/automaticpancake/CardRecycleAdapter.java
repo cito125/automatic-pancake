@@ -19,12 +19,12 @@ import java.util.List;
  * Created by andresarango on 10/30/16.
  */
 
-public class CardRecycleAdapter extends RecyclerView.Adapter {
+public class CardRecycleAdapter extends RecyclerView.Adapter<ViewHolderBindingAgreement> {
     private final int CATMEME = 0, NEWSCARD = 1, REMINDME = 2;
     private List<CardHolderPOJO> mCardHolderList = new ArrayList<>();
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolderBindingAgreement onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         switch (viewType){
             case CATMEME:
@@ -59,8 +59,8 @@ public class CardRecycleAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((ViewHolderBindingAgreement) holder).bindViewHolder(mCardHolderList.get(position));
+    public void onBindViewHolder(ViewHolderBindingAgreement holder, int position) {
+        holder.bindViewHolder(mCardHolderList.get(position));
     }
 
     @Override
