@@ -1,0 +1,31 @@
+package com.example.andresarango.automaticpancake.sample_package;
+
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
+import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
+import com.example.andresarango.automaticpancake.R;
+import com.example.andresarango.automaticpancake.utility.CardViewHolder;
+
+/**
+ * Created by andresarango on 10/31/16.
+ */
+
+public class SampleCardHolderPOJO implements CardHolderPOJO {
+    String icon_url;
+    String id;
+    String url;
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    String value;
+
+    @Override
+    public CardViewHolder POJOViewholder(ViewGroup parent) {
+        return new SampleViewHolder(LayoutInflater
+                .from(parent.getContext())
+                .inflate(R.layout.test_card,parent,false));
+    }
+}
