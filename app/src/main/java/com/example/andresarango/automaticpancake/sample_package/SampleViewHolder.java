@@ -11,6 +11,8 @@ import com.example.andresarango.automaticpancake.utility.CardViewHolder;
  * Created by andresarango on 10/31/16.
  */
 
+/*This acts like a regular ViewHolder*/
+
 public class SampleViewHolder extends CardViewHolder {
     CardView testCard;
     TextView testText;

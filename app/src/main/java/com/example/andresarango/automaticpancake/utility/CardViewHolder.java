@@ -9,14 +9,14 @@ import android.view.View;
 
 public abstract class CardViewHolder extends RecyclerView.ViewHolder{
     /*
-    * Each CardViewHolder must implement the CardViewHolder and is responsible for binding
-    * data to each view within the class.
+    * Each CardViewHolder is responsible for binding or not binding data to it's view.
     *
-    *
+    * This data should come from it's corresponding CardHolderPOJO.
     * */
 
     public CardViewHolder(View itemView) {
         super(itemView);
     }
     public abstract void bindViewHolder(Object obj);
+
 }

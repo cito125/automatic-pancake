@@ -8,7 +8,8 @@ import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
 
 public interface POJOCallback {
     /*
-    * 
+    *
+    *Should be implemented by a listener waiting for a POJOCallback.
     *
     * */
 
