@@ -45,8 +45,8 @@ public class CardHolderCall<T> {
     }
 
 
-    /*starts an async task off the main activity that will return a CardHolderPOJO to the passed in
-    * listener*/
+    /*starts an async task off the main activity that will add a CardHolderPOJO to the CardRecycleAdapter
+    * of the main activity once the task is finished.*/
     private void runServiceThreadForCardHolderPOJO(Call<T> call, final POJOParser parser){
         call.enqueue(new Callback<T>() {
             @Override

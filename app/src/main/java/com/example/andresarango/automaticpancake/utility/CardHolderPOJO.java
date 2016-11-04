@@ -17,8 +17,8 @@ public interface CardHolderPOJO {
     *
     * This interface only requires the implementation of one method, POJOViewHolder.
     * POJOViewHolder returns a viewHolder of type CardViewHolder that will be used in
-    * the onCreatViewHolder of the recyclerView. The layout to be inflated should be specified and
-    * returned in this method. The returned object must be of type CardViewHolder.
+    * the onCreatViewHolder of the recyclerView. The layout to be inflated should be referenced, inflated
+     * and returned in this method. The returned object must be of type CardViewHolder.
     *
     * This method is necessary at the moment because CardRecyclerAdapter goes through a list of
     * CardHolderPOJO objects and is expecting to be able to call this method indiscriminately and
