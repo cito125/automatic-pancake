@@ -9,9 +9,9 @@ import com.example.andresarango.automaticpancake.utility.CardViewHolder;
  * Created by andresarango on 10/30/16.
  */
 
-public class NewsCardViewHolder extends CardViewHolder {
+public class NYTimesViewHolder extends CardViewHolder {
     private CardView newsCard;
-    public NewsCardViewHolder(View itemView) {
+    public NYTimesViewHolder(View itemView) {
         super(itemView);
     }
 

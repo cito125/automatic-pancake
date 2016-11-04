@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements POJOCallback {
                     new CardHolderCall<SamplePOJO>(
                             new SampleParser(),
                             netServe.getServiceObject(
-                                    SamplePOJO.CHUCK_NORRIS_BASE_URL,
+                                    SampleService.CHUCK_NORRIS_BASE_URL,
                                     SampleService.class).getRandomJoke(),
                             this));
         }

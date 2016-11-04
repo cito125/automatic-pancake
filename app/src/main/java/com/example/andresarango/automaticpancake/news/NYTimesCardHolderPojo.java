@@ -9,7 +9,7 @@ import com.example.andresarango.automaticpancake.utility.CardViewHolder;
  * Created by andresarango on 10/30/16.
  */
 
-public class NewsCards implements CardHolderPOJO {
+public class NYTimesCardHolderPojo implements CardHolderPOJO {
     @Override
     public CardViewHolder POJOViewholder(ViewGroup parent) {
         return null;
