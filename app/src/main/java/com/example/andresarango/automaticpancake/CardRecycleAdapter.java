@@ -5,6 +5,7 @@ import android.view.ViewGroup;
 
 import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
+import com.example.andresarango.automaticpancake.utility.networks.POJOCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
  * Created by andresarango on 10/30/16.
  */
 
-public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> {
+public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> implements POJOCallback {
     private List<CardHolderPOJO> mCardHolderList = new ArrayList<>();
 
 
@@ -56,5 +57,12 @@ public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> {
     @Override
     public int getItemCount() {
         return mCardHolderList.size();
+    }
+
+    @Override
+    public void callback(CardHolderPOJO pojo) {
+        if (pojo != null) {
+            addCardHolderToEnd(pojo);
+        }
     }
 }

@@ -20,7 +20,7 @@ import java.util.List;
 
 import retrofit2.Call;
 
-public class MainActivity extends AppCompatActivity implements POJOCallback {
+public class MainActivity extends AppCompatActivity {
     private RecyclerView mCardRecycler;
     private CardRecycleAdapter mCardAdapter;
     private List<CardHolderCall> mNetworkList = new ArrayList<>();
@@ -42,10 +42,10 @@ public class MainActivity extends AppCompatActivity implements POJOCallback {
             mNetworkList.add(
                     new CardHolderCall<>(
                             new SampleParser(),
-                            netServe.getServiceObject(
+                            netServe.getJSONService(
                                     SamplePOJO.CHUCK_NORRIS_BASE_URL,
                                     SampleService.class).getRandomJoke(),
-                            this));
+                            mCardAdapter));
         }
 
         mCardAdapter.addCardHolderToEnd(new CatMeme());
@@ -53,12 +53,6 @@ public class MainActivity extends AppCompatActivity implements POJOCallback {
 
     }
 
-    @Override
-    public void callback(CardHolderPOJO pojo) {
-        if (pojo != null) {
-            mCardAdapter.addCardHolderToEnd(pojo);
-        }
-    }
 
     public void makeNetworkListCall() {
         for (int i = 0; i < mNetworkList.size(); i++) {
