@@ -12,20 +12,20 @@ import com.example.andresarango.automaticpancake.utility.CardViewHolder;
  */
 
 public class SampleCardHolderPOJO implements CardHolderPOJO {
+
     String icon_url;
     String id;
     String url;
+    String value;
 
     public void setValue(String value) {
         this.value = value;
     }
 
-    String value;
-
     @Override
     public CardViewHolder POJOViewholder(ViewGroup parent) {
         return new SampleViewHolder(LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.test_card,parent,false));
+                .inflate(R.layout.sample_card,parent,false));
     }
 }
