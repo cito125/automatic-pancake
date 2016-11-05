@@ -6,19 +6,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.andresarango.automaticpancake.cat.CatMeme;
-import com.example.andresarango.automaticpancake.sample_package.SampleCardHolderPOJO;
-import com.example.andresarango.automaticpancake.sample_package.SamplePOJO;
 import com.example.andresarango.automaticpancake.sample_package.SampleParser;
 import com.example.andresarango.automaticpancake.sample_package.SampleService;
-import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
 import com.example.andresarango.automaticpancake.utility.networks.CardHolderCall;
 import com.example.andresarango.automaticpancake.utility.networks.NetworkServices;
-import com.example.andresarango.automaticpancake.utility.networks.POJOCallback;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mCardRecycler;
@@ -43,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                     new CardHolderCall<>(
                             new SampleParser(),
                             netServe.getJSONService(
-                                    SamplePOJO.CHUCK_NORRIS_BASE_URL,
+                                    SampleService.CHUCK_NORRIS_BASE_URL,
                                     SampleService.class).getRandomJoke(),
                             mCardAdapter));
         }
