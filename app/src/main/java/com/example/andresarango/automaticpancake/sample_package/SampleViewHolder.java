@@ -19,8 +19,8 @@ public class SampleViewHolder extends CardViewHolder {
 
     public SampleViewHolder(View itemView) {
         super(itemView);
-        testCard = (CardView) itemView.findViewById(R.id.card_recycler);
-        testText = (TextView) itemView.findViewById(R.id.yo);
+        testCard = (CardView) itemView.findViewById(R.id.sample_card);
+        testText = (TextView) itemView.findViewById(R.id.tv_sampletext);
     }
 
     @Override
