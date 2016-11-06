@@ -30,5 +30,6 @@ public interface CardHolderPOJO {
     * For now, we can think of the POJOViewHolder as a means of a CardHolderPOJO holding information
     * about it's corresponding CardViewHolder.
      */
+
     CardViewHolder POJOViewholder(ViewGroup parent);
 }

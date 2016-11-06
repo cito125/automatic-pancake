@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.andresarango.automaticpancake.cat.CatMeme;
+import com.example.andresarango.automaticpancake.news.NYTimesCardHolderPojo;
 import com.example.andresarango.automaticpancake.sample_package.SampleParser;
 import com.example.andresarango.automaticpancake.sample_package.SampleService;
 import com.example.andresarango.automaticpancake.utility.networks.CardHolderCall;
@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
 //        for (int i = 0; i < 10; i++) {
 //            mCardAdapter.addCardHolderToEnd(new SampleCardHolderPOJO());
 //        }
-//
+
+        mCardAdapter.addCardHolderToEnd(new NYTimesCardHolderPojo());
         for (int i = 0; i <10 ; i++) {
             mNetworkList.add(
                     new CardHolderCall<>(
@@ -42,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
                             mCardAdapter));
         }
 
-        mCardAdapter.addCardHolderToEnd(new CatMeme());
+
+//        mCardAdapter.addCardHolderToEnd(new CatMeme());
         makeNetworkListCall();
 
     }
