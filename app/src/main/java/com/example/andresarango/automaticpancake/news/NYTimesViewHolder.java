@@ -44,6 +44,7 @@ public class NYTimesViewHolder extends CardViewHolder {
             "realestate",
             "automobiles",
             "obituaries",
+            
             "insider"));
 
     public NYTimesViewHolder(View itemView) {
