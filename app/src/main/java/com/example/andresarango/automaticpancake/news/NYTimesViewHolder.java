@@ -17,7 +17,7 @@ import java.util.List;
  */
 
 public class NYTimesViewHolder extends CardViewHolder {
-    int yo =0;
+    String yo = "bars";
     Context mContext;
     private RecyclerView mNewsOptionRecycler;
     private List<String> mNewsOptionList = new ArrayList<String>(Arrays.asList("home",
