@@ -1,8 +1,9 @@
-package com.example.andresarango.automaticpancake.news;
+package com.example.andresarango.automaticpancake.news.nytimes_horizant_rc;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
 import com.example.andresarango.automaticpancake.R;
@@ -44,7 +45,6 @@ public class NYTimesViewHolder extends CardViewHolder {
             "realestate",
             "automobiles",
             "obituaries",
-            "sfasfsf",
             "insider"));
 
     public NYTimesViewHolder(View itemView) {
@@ -59,9 +59,28 @@ public class NYTimesViewHolder extends CardViewHolder {
 
         mNewsOptionRecycler.setLayoutManager(
                 new LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false));
-        NYTNewsOptionRCAdapter newsOptionAdapter = new NYTNewsOptionRCAdapter();
+        final NYTOptRCAdapter newsOptionAdapter = new NYTOptRCAdapter();
         mNewsOptionRecycler.setAdapter(newsOptionAdapter);
         newsOptionAdapter.setCardHolderList(mNewsOptionList);
+
+        ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.UP | ItemTouchHelper.DOWN) {
+
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                int position = viewHolder.getAdapterPosition();
+                newsOptionAdapter.removeCard(position);
+                newsOptionAdapter.notifyItemRemoved(position);
+            }
+        };
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
+        itemTouchHelper.attachToRecyclerView(mNewsOptionRecycler);
     }
+
 
 }

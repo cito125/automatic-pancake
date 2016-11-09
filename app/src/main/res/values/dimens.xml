@@ -2,5 +2,12 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nyt_pic_width">100dp</dimen>
+    <dimen name="nyt_pic_height">100dp</dimen>
+    <dimen name="section_padding">8dp</dimen>
+    <dimen name="article_section_text_size">25sp</dimen>
+    <dimen name="article_title_text_size">18sp</dimen>
+    <dimen name="article_abstract_text_size">15sp</dimen>
+
 
 </resources>

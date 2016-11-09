@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.andresarango.automaticpancake.R;
+import com.example.andresarango.automaticpancake.news.nytimes_horizant_rc.NYTimesViewHolder;
 import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 
