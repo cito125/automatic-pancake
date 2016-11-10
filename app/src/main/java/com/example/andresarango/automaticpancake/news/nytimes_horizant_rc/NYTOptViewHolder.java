@@ -4,10 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.andresarango.automaticpancake.R;
@@ -30,7 +28,7 @@ import retrofit2.Response;
 public class NYTOptViewHolder extends RecyclerView.ViewHolder{
     TextView mNYTOptTV;
     TextView mTitleTV;
-    LinearLayout mNewsView;
+    TextView mAbstractTV;
     ImageView mArticlePic;
     NYTimesAPI mNYTimmesAPI;
     String mURLOfArticle;
@@ -40,17 +38,17 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
         mContext = itemView.getContext();
         mNYTOptTV = (TextView) itemView.findViewById(R.id.nyt_news_op_tv);
-        mArticlePic = (ImageView) itemView.findViewById(R.id.article_pic);
         mTitleTV = (TextView) itemView.findViewById(R.id.article_title);
-        mNewsView = (LinearLayout) itemView.findViewById(R.id.news_view);
-        mNewsView.setOnClickListener(onClick());
+        mAbstractTV = (TextView) itemView.findViewById(R.id.nyt_abstract);
+        mArticlePic = (ImageView) itemView.findViewById(R.id.article_pic);
+        mTitleTV.setOnClickListener(onClick());
+        mArticlePic.setOnClickListener(onClick());
     }
 
     private View.OnClickListener onClick() {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("yoooo", "onClick: ");
                 if(mURLOfArticle != null){
                     Uri uri = Uri.parse(mURLOfArticle); // missing 'http://' will cause crashed
                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
@@ -70,6 +68,7 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder{
                 if (response.isSuccessful()){
                     Result firstResult = response.body().getResults().get(0);
                     setTitle(firstResult.getTitle());
+                    setAbstract(firstResult.getAbstract());
                     List<Multimedium> multiMediaList = firstResult.getMultimedia();
                     if(multiMediaList.size() > 0) {
                         setPicture(firstResult.getMultimedia().get(0).getUrl());
@@ -84,6 +83,12 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder{
             }
         });
 
+    }
+
+    private void setAbstract(String anAbstract) {
+        if(mAbstractTV != null && anAbstract!=null) {
+            mAbstractTV.setText(anAbstract);
+        }
     }
 
 

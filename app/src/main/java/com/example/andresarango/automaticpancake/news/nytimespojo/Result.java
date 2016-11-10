@@ -2,6 +2,8 @@
 package com.example.andresarango.automaticpancake.news.nytimespojo;
 
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +12,11 @@ public class Result {
     private String section;
     private String subsection;
     private String title;
+
+    @SerializedName("abstract")
     private String _abstract;
+
+
     private String url;
     private String thumbnailStandard;
     private String shortUrl;

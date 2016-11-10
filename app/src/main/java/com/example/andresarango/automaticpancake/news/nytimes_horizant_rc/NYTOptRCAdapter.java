@@ -21,6 +21,7 @@ public class NYTOptRCAdapter extends RecyclerView.Adapter<NYTOptViewHolder> {
         return new NYTOptViewHolder(LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.aanyt_news_option_viewholder,parent,false));
+
     }
 
     @Override
@@ -41,5 +42,6 @@ public class NYTOptRCAdapter extends RecyclerView.Adapter<NYTOptViewHolder> {
 
     public void removeCard(int position) {
         mNewsOptionsList.remove(position);
+        notifyItemRemoved(position);
     }
 }
