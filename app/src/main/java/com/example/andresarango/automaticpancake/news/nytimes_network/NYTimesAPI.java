@@ -17,18 +17,18 @@ public class NYTimesAPI {
 
     private static NYTimesAPI instance;
 
-    public static NYTimesAPI getInstance(){
-        if(instance == null){
+    public static NYTimesAPI getInstance() {
+        if (instance == null) {
             instance = new NYTimesAPI();
         }
         return instance;
     }
 
-    private NYTimesAPI(){
-        apiService = (new NetworkServices()).getJSONService(BASE_NYTIMES_URL,NYTimesService.class);
+    private NYTimesAPI() {
+        apiService = (new NetworkServices()).getJSONService(BASE_NYTIMES_URL, NYTimesService.class);
     }
 
-    public Call<Article> getSection(String section){
-        return apiService.newsStory(section,NYTIMES_TOP_ARTICLES_API_KEY);
+    public Call<Article> getSection(String section) {
+        return apiService.newsStory(section, NYTIMES_TOP_ARTICLES_API_KEY);
     }
 }

@@ -25,7 +25,7 @@ import retrofit2.Response;
  * Created by andresarango on 11/5/16.
  */
 
-public class NYTOptViewHolder extends RecyclerView.ViewHolder{
+public class NYTOptViewHolder extends RecyclerView.ViewHolder {
     TextView mNYTOptTV;
     TextView mTitleTV;
     TextView mAbstractTV;
@@ -49,7 +49,7 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder{
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mURLOfArticle != null){
+                if (mURLOfArticle != null) {
                     Uri uri = Uri.parse(mURLOfArticle); // missing 'http://' will cause crashed
                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                     mContext.startActivity(intent);
@@ -65,12 +65,12 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder{
         mNYTimmesAPI.getSection(section).enqueue(new Callback<Article>() {
             @Override
             public void onResponse(Call<Article> call, Response<Article> response) {
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     Result firstResult = response.body().getResults().get(0);
                     setTitle(firstResult.getTitle());
                     setAbstract(firstResult.getAbstract());
                     List<Multimedium> multiMediaList = firstResult.getMultimedia();
-                    if(multiMediaList.size() > 0) {
+                    if (multiMediaList.size() > 0) {
                         setPicture(firstResult.getMultimedia().get(0).getUrl());
                     }
                     mURLOfArticle = firstResult.getUrl();
@@ -86,22 +86,22 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder{
     }
 
     private void setAbstract(String anAbstract) {
-        if(mAbstractTV != null && anAbstract!=null) {
+        if (mAbstractTV != null && anAbstract != null) {
             mAbstractTV.setText(anAbstract);
         }
     }
 
 
-    protected void onBind(String newsOption){
+    protected void onBind(String newsOption) {
         mNYTOptTV.setText(newsOption.toUpperCase());
         runNYTimesAPI(newsOption);
     }
 
-    private void setTitle(String title){
+    private void setTitle(String title) {
         mTitleTV.setText(title);
     }
 
-    private void setPicture(String url){
+    private void setPicture(String url) {
         Picasso.with(itemView.getContext())
                 .load(url)
                 .placeholder(R.drawable.nytimes_logo)
