@@ -4,21 +4,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.example.andresarango.automaticpancake.cat.CatMeme;
-import com.example.andresarango.automaticpancake.sample_package.SampleCardHolderPOJO;
-import com.example.andresarango.automaticpancake.sample_package.SamplePOJO;
+import com.example.andresarango.automaticpancake.news.NYTimesCardHolderPojo;
 import com.example.andresarango.automaticpancake.sample_package.SampleParser;
 import com.example.andresarango.automaticpancake.sample_package.SampleService;
-import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
 import com.example.andresarango.automaticpancake.utility.networks.CardHolderCall;
 import com.example.andresarango.automaticpancake.utility.networks.NetworkServices;
-import com.example.andresarango.automaticpancake.utility.networks.POJOCallback;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mCardRecycler;
@@ -33,22 +28,26 @@ public class MainActivity extends AppCompatActivity {
         mCardRecycler.setLayoutManager(new LinearLayoutManager(this));
         mCardAdapter = new CardRecycleAdapter();
         mCardRecycler.setAdapter(mCardAdapter);
+        ItemTouchHelper touchMeInDifferentWays = new ItemTouchHelper(new TouchMe(mCardAdapter));
+        touchMeInDifferentWays.attachToRecyclerView(mCardRecycler);
         NetworkServices netServe = new NetworkServices();
 //        for (int i = 0; i < 10; i++) {
 //            mCardAdapter.addCardHolderToEnd(new SampleCardHolderPOJO());
 //        }
-//
+
+        mCardAdapter.addCardHolderToEnd(new NYTimesCardHolderPojo());
         for (int i = 0; i <10 ; i++) {
             mNetworkList.add(
                     new CardHolderCall<>(
                             new SampleParser(),
                             netServe.getJSONService(
-                                    SamplePOJO.CHUCK_NORRIS_BASE_URL,
+                                    SampleService.CHUCK_NORRIS_BASE_URL,
                                     SampleService.class).getRandomJoke(),
                             mCardAdapter));
         }
 
-        mCardAdapter.addCardHolderToEnd(new CatMeme());
+
+//        mCardAdapter.addCardHolderToEnd(new CatMeme());
         makeNetworkListCall();
 
     }

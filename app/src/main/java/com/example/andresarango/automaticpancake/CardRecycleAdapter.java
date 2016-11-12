@@ -8,6 +8,7 @@ import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 import com.example.andresarango.automaticpancake.utility.networks.POJOCallback;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -64,5 +65,24 @@ public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> imp
         if (pojo != null) {
             addCardHolderToEnd(pojo);
         }
+    }
+
+    public boolean onItemMove(int fromPosition, int toPosition) {
+        if (fromPosition < toPosition) {
+            for (int i = fromPosition; i < toPosition; i++) {
+                Collections.swap(mCardHolderList, i, i + 1);
+            }
+        } else {
+            for (int i = fromPosition; i > toPosition; i--) {
+                Collections.swap(mCardHolderList, i, i - 1);
+            }
+        }
+        notifyItemMoved(fromPosition, toPosition);
+        return true;
+    }
+
+    public void onItemDismiss(int adapterPosition) {
+        mCardHolderList.remove(adapterPosition);
+        notifyItemRemoved(adapterPosition);
     }
 }

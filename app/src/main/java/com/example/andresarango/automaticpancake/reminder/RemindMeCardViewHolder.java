@@ -11,6 +11,7 @@ import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 public class RemindMeCardViewHolder extends CardViewHolder {
     public RemindMeCardViewHolder(View itemView) {
         super(itemView);
+
     }
 
     @Override

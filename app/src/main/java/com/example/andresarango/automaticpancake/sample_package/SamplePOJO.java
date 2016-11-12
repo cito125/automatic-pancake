@@ -16,7 +16,7 @@ package com.example.andresarango.automaticpancake.sample_package;
 * */
 
 public class SamplePOJO {
-    public final static String CHUCK_NORRIS_BASE_URL = "https://api.chucknorris.io/";
+
 
     String icon_url;
     String id;

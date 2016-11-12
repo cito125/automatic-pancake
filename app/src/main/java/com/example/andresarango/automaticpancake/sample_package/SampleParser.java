@@ -1,7 +1,7 @@
 package com.example.andresarango.automaticpancake.sample_package;
 
 import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
-import com.example.andresarango.automaticpancake.utility.POJOParser;
+import com.example.andresarango.automaticpancake.utility.networks.POJOParser;
 
 /**
  * Created by andresarango on 11/2/16.

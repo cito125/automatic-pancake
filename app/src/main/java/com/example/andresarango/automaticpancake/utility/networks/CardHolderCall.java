@@ -3,31 +3,29 @@ package com.example.andresarango.automaticpancake.utility.networks;
 
 import android.util.Log;
 
-import com.example.andresarango.automaticpancake.utility.POJOParser;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
  * Created by andresarango on 11/1/16.
+ *
+ * * CardHolderCall takes in an object to parsePOJO's, a call, and a callback object in it's
+ * constructor.
+ *
+ * * POJOparser takes the response.body() of your call and parses it for whatever data you want
+ * bound to your CardHolderPOJO
+ *
+ *
+ * POJOCallback is the listener the POJOParser will return the CardHolder object to. It should
+ * probably be the main activity.
+ *
+ * Call<T> is the call to be made.
+ *
  */
 
 public class CardHolderCall<T> {
 
-    /*
-    * CardHolderCall takes in an object to parsePOJO's, a call, and a callback object in it's
-    * constructor.
-    *
-    * * POJOparser takes the response.body() of your call and parses it for whatever data you want
-    * bound to your CardHolderPOJO
-    *
-    *
-    * POJOCallback is the listener the POJOParser will return the CardHolder object to. It should
-    * probably be the main activity.
-    *
-    * Call<T> is the call to be made.
-     */
 
     private POJOParser mPOJOParser;
     private POJOCallback mListener;
