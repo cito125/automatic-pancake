@@ -7,14 +7,13 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 /**
  * Created by andresarango on 11/1/16.
+ *
+ * Network Services holds methods that make dealing with network related things easier. These
+ * methods should be implementable by any object involved in the retrofit network process.
  */
 
 public class NetworkServices {
 
-    /*
-    * Network Services holds methods that make dealing with network related things easier. These
-    * methods should be implementable by any object involved in the retrofit network process.
-    * */
 
     public <T> T getJSONService(String base_url, Class<T> networkServiceInterface){
         Retrofit retrofit = new Retrofit.Builder()
