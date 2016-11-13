@@ -1,37 +1,20 @@
 package com.example.andresarango.automaticpancake;
 
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
-import com.example.andresarango.automaticpancake.cat.CatAPIParser;
-import com.example.andresarango.automaticpancake.cat.CatAPIService;
-import com.example.andresarango.automaticpancake.cat.CatCardViewHolder;
 import com.example.andresarango.automaticpancake.cat.CatMemePOJO;
-import com.example.andresarango.automaticpancake.cat.Image;
 import com.example.andresarango.automaticpancake.horoscope.DisplayHoroscope;
 import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO;
 import com.example.andresarango.automaticpancake.horoscope.HoroscopeService;
-import com.example.andresarango.automaticpancake.sample_package.SampleCardHolderPOJO;
-import com.example.andresarango.automaticpancake.sample_package.SamplePOJO;
-import com.example.andresarango.automaticpancake.sample_package.SampleParser;
-import com.example.andresarango.automaticpancake.sample_package.SampleService;
-import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
-import com.example.andresarango.automaticpancake.utility.POJOParser;
-import com.example.andresarango.automaticpancake.utility.networks.CardHolderCall;
+import com.example.andresarango.automaticpancake.news.NYTimesGoogleNowCardHolder;
+import com.example.andresarango.automaticpancake.utility.networks.GoogleNowCardCall;
 import com.example.andresarango.automaticpancake.utility.networks.NetworkServices;
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,13 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mCardRecycler;
     private CardRecycleAdapter mCardAdapter;
-    private List<CardHolderCall> mNetworkList = new ArrayList<>();
-    private RelativeLayout buttonsLayout;
-
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
+    private List<GoogleNowCardCall> mNetworkList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,29 +37,16 @@ public class MainActivity extends AppCompatActivity {
         mCardRecycler.setLayoutManager(new LinearLayoutManager(this));
         mCardAdapter = new CardRecycleAdapter();
         mCardRecycler.setAdapter(mCardAdapter);
-        buttonsLayout = (RelativeLayout) findViewById(R.id.horoscope_buttons_layout);
-        NetworkServices netServe = new NetworkServices();
-//        for (int i = 0; i < 3; i++) {
-//            mCardAdapter.addCardHolderToEnd(new SampleCardHolderPOJO());
-//        }
-
+        ItemTouchHelper touchMeInDifferentWays = new ItemTouchHelper(new TouchMe(mCardAdapter));
+        NetworkServices networkServices = new NetworkServices();
+        touchMeInDifferentWays.attachToRecyclerView(mCardRecycler);
+        mCardAdapter.addCardHolderToEnd(new NYTimesGoogleNowCardHolder());
+        mCardAdapter.addCardHolderToEnd(new CatMemePOJO());
         mCardAdapter.addCardHolderToEnd(new HoroscopePOJO());
 
-//        for (int i = 0; i < 10; i++) {
-//            mNetworkList.add(
-//                    new CardHolderCall<>(
-//                            new SampleParser(),
-//                            netServe.getJSONService(
-//                                    SamplePOJO.CHUCK_NORRIS_BASE_URL,
-//                                    SampleService.class).getRandomJoke(),
-//                            mCardAdapter));
-//        }
-
-        mCardAdapter.addCardHolder(new CatMemePOJO(), 0);
         makeNetworkListCall();
 
     }
-
 
     public void makeNetworkListCall() {
         for (int i = 0; i < mNetworkList.size(); i++) {
@@ -139,4 +103,3 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
-

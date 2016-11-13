@@ -3,19 +3,20 @@ package com.example.andresarango.automaticpancake;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
+import com.example.andresarango.automaticpancake.utility.GoogleNowCardHolder;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
-import com.example.andresarango.automaticpancake.utility.networks.POJOCallback;
+import com.example.andresarango.automaticpancake.utility.networks.GoogleNowCardCallback;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by andresarango on 10/30/16.
  */
 
-public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> implements POJOCallback {
-    private List<CardHolderPOJO> mCardHolderList = new ArrayList<>();
+public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> implements GoogleNowCardCallback {
+    private List<GoogleNowCardHolder> mCardHolderList = new ArrayList<>();
 
 
     @Override
@@ -28,32 +29,32 @@ public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> imp
         return null;
     }
 
-    public void setCardHolderList(List<CardHolderPOJO> updateList) {
+    public void setCardHolderList(List<GoogleNowCardHolder> updateList){
         mCardHolderList.clear();
         mCardHolderList.addAll(updateList);
         notifyDataSetChanged();
     }
 
-    public void addCardHolder(CardHolderPOJO cardholderPOJO, int i) {
-        mCardHolderList.add(i, cardholderPOJO);
+    public void addCardHolder(GoogleNowCardHolder cardholderGoogleNow, int i){
+        mCardHolderList.add(i, cardholderGoogleNow);
         notifyItemInserted(i);
     }
 
-    public void addCardHolderToEnd(CardHolderPOJO cardholderPOJO) {
-        mCardHolderList.add(cardholderPOJO);
+    public void addCardHolderToEnd(GoogleNowCardHolder cardholderGoogleNow){
+        mCardHolderList.add(cardholderGoogleNow);
         notifyItemInserted(mCardHolderList.size() - 1);
     }
 
-    public void addCardHolderToTop(CardHolderPOJO cardholderPOJO) {
+    public void addCardHolderToTop(GoogleNowCardHolder cardholderPOJO) {
         mCardHolderList.add(0,cardholderPOJO);
         notifyItemInserted(0);
     }
 
-    public void deleteCardHolder(CardHolderPOJO cardHolderPOJO) {
+    public void deleteCardHolder(GoogleNowCardHolder cardHolderPOJO) {
         mCardHolderList.clear();
     }
 
-    public void addCardHolderToTopOfHoroscopeCard(int position,CardHolderPOJO cardholderPOJO) {
+    public void addCardHolderToTopOfHoroscopeCard(int position,GoogleNowCardHolder cardholderPOJO) {
         if(position <=0){
             mCardHolderList.add(0,cardholderPOJO);
             notifyItemInserted(position);
@@ -79,9 +80,28 @@ public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> imp
     }
 
     @Override
-    public void callback(CardHolderPOJO pojo) {
+    public void callback(GoogleNowCardHolder pojo) {
         if (pojo != null) {
             addCardHolderToEnd(pojo);
         }
+    }
+
+    public boolean onItemMove(int fromPosition, int toPosition) {
+        if (fromPosition < toPosition) {
+            for (int i = fromPosition; i < toPosition; i++) {
+                Collections.swap(mCardHolderList, i, i + 1);
+            }
+        } else {
+            for (int i = fromPosition; i > toPosition; i--) {
+                Collections.swap(mCardHolderList, i, i - 1);
+            }
+        }
+        notifyItemMoved(fromPosition, toPosition);
+        return true;
+    }
+
+    public void onItemDismiss(int adapterPosition) {
+        mCardHolderList.remove(adapterPosition);
+        notifyItemRemoved(adapterPosition);
     }
 }

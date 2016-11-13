@@ -4,8 +4,8 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.andresarango.automaticpancake.R;
-import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
+import com.example.andresarango.automaticpancake.utility.GoogleNowCardHolder;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -13,7 +13,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by catwong on 11/12/16.
  */
 
-public class DisplayHoroscope implements CardHolderPOJO {
+public class DisplayHoroscope implements GoogleNowCardHolder {
 
     @SerializedName("date")
     @Expose
