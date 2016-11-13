@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         mCardAdapter.addCardHolderToEnd(new NYTimesCardHolderPojo());
-        for (int i = 0; i <10 ; i++) {
+        for (int i = 0; i < 10; i++) {
             mNetworkList.add(
                     new CardHolderCall<>(
                             new SampleParser(),

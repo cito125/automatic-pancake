@@ -20,7 +20,7 @@ public class NYTOptRCAdapter extends RecyclerView.Adapter<NYTOptViewHolder> {
     public NYTOptViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new NYTOptViewHolder(LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.aanyt_news_option_viewholder,parent,false));
+                .inflate(R.layout.aanyt_news_option_viewholder, parent, false));
 
     }
 
@@ -29,7 +29,7 @@ public class NYTOptRCAdapter extends RecyclerView.Adapter<NYTOptViewHolder> {
         holder.onBind(mNewsOptionsList.get(position));
     }
 
-    protected void setCardHolderList(List<String> updateList){
+    protected void setCardHolderList(List<String> updateList) {
         mNewsOptionsList.clear();
         mNewsOptionsList.addAll(updateList);
         notifyDataSetChanged();

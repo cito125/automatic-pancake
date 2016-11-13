@@ -17,6 +17,6 @@ public class NYTimesCardHolderPojo implements CardHolderPOJO {
     public CardViewHolder POJOViewholder(ViewGroup parent) {
         return new NYTimesViewHolder(LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.aanyt_news_card,parent,false));
+                .inflate(R.layout.aanyt_news_card, parent, false));
     }
 }

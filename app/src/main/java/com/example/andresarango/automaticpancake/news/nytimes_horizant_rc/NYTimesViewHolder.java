@@ -58,7 +58,7 @@ public class NYTimesViewHolder extends CardViewHolder {
     public void bindViewHolder(Object obj) {
 
         mNewsOptionRecycler.setLayoutManager(
-                new LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false));
+                new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
         final NYTOptRCAdapter newsOptionAdapter = new NYTOptRCAdapter();
         mNewsOptionRecycler.setAdapter(newsOptionAdapter);
         newsOptionAdapter.setCardHolderList(mNewsOptionList);
@@ -68,7 +68,7 @@ public class NYTimesViewHolder extends CardViewHolder {
             @Override
             public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
                 int swipeFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
-                return makeMovementFlags(0,swipeFlags);
+                return makeMovementFlags(0, swipeFlags);
             }
 
             @Override
@@ -80,7 +80,6 @@ public class NYTimesViewHolder extends CardViewHolder {
             public boolean isItemViewSwipeEnabled() {
                 return true;
             }
-
 
 
             @Override

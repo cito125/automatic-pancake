@@ -26,6 +26,6 @@ public class SampleCardHolderPOJO implements CardHolderPOJO {
     public CardViewHolder POJOViewholder(ViewGroup parent) {
         return new SampleViewHolder(LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.sample_card,parent,false));
+                .inflate(R.layout.sample_card, parent, false));
     }
 }

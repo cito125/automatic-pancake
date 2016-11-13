@@ -19,7 +19,7 @@ public class TouchMe extends ItemTouchHelper.Callback {
 
     @Override
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-        if(viewHolder instanceof NYTimesViewHolder){
+        if (viewHolder instanceof NYTimesViewHolder) {
             return 0;
         }
         int dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
@@ -46,7 +46,7 @@ public class TouchMe extends ItemTouchHelper.Callback {
 
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-            mAdapter.onItemDismiss(viewHolder.getAdapterPosition());
+        mAdapter.onItemDismiss(viewHolder.getAdapterPosition());
 
     }
 }
