@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">AutomaticPancake</string>
+    <string name="aries">Mar 21 - Apr 19</string>
+    <string name="taurus">Apr 20 - May 21</string>
+    <string name="gemini">May 21 - Jun 21</string>
+    <string name="cancer">Jun 21 - Jul 22</string>
+    <string name="leo">Jul 23 - Aug 22</string>
+    <string name="virgo">Aug 23 - Sept 22</string>
+    <string name="libra">Sept 23 - Oct 23</string>
+    <string name="scorpio">Oct 23 - Nov 21</string>
+    <string name="sagittarius">Nov 22 - Dec 21</string>
+    <string name="capricorn">Dec 22 - Jan 20</string>
+    <string name="aquarius">Jan 20 - Feb 19</string>
+    <string name="pisces">Feb 19 – Mar 20</string>
 </resources>

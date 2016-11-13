@@ -9,6 +9,8 @@ public class Image {
     private String url;
     private String id;
     private String source_url;
+    public final static String CAT_API_BASE_URL = "http://thecatapi.com/api/";
+
 
     public String getUrl() {
         return url;
