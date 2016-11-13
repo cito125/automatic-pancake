@@ -1,25 +1,21 @@
 package com.example.andresarango.automaticpancake.cat;
 
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+
+import com.example.andresarango.automaticpancake.R;
+import com.example.andresarango.automaticpancake.sample_package.SampleViewHolder;
+import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
+import com.example.andresarango.automaticpancake.utility.CardViewHolder;
+
 /**
- {
- "response": {
- "data": {
- "images": {
- "image": {
- "url": "http://25.media.tumblr.com/tumblr_ln2jy1bVqF1qbt33io1_500.jpg",
- "id": "5rt",
- "source_url": "http://thecatapi.com/?id=5rt"
- }
- }
- }
- }
- }
+ * http://thecatapi.com/api/images/get?api_key=MTMzNDM2&format=src&results_per_page=1
  */
 
-
-public class CatMemePOJO {
+public class CatMemePOJO implements CardHolderPOJO {
 
     private Response response;
+
 
     public Response getResponse() {
         return response;
@@ -27,5 +23,13 @@ public class CatMemePOJO {
 
     public void setResponse(Response response) {
         this.response = response;
+    }
+
+    @Override
+    public CardViewHolder POJOViewholder(ViewGroup parent) {
+        return new CatCardViewHolder(LayoutInflater
+                .from(parent.getContext())
+                .inflate(R.layout.cat_card, parent, false));
+
     }
 }

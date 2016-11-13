@@ -16,7 +16,7 @@ public class NetworkServices {
     * methods should be implementable by any object involved in the retrofit network process.
     * */
 
-    public <T> T getJSONService(String base_url, Class<T> networkServiceInterface){
+    public <T> T getJSONService(String base_url, Class<T> networkServiceInterface) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(base_url)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -24,7 +24,7 @@ public class NetworkServices {
         return retrofit.create(networkServiceInterface);
     }
 
-    public <T> T getXMLService(String base_url, Class<T> networkServiceInterface){
+    public <T> T getXMLService(String base_url, Class<T> networkServiceInterface) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(base_url)
                 .client(new OkHttpClient())

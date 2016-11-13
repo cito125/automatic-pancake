@@ -21,27 +21,46 @@ public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> imp
     @Override
     public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         for (int i = 0; i < mCardHolderList.size(); i++) {
-            if(System.identityHashCode(mCardHolderList.get(i)) == viewType){
+            if (System.identityHashCode(mCardHolderList.get(i)) == viewType) {
                 return mCardHolderList.get(i).POJOViewholder(parent);
             }
         }
         return null;
     }
 
-    public void setCardHolderList(List<CardHolderPOJO> updateList){
+    public void setCardHolderList(List<CardHolderPOJO> updateList) {
         mCardHolderList.clear();
         mCardHolderList.addAll(updateList);
         notifyDataSetChanged();
     }
 
-    public void addCardHolder(CardHolderPOJO cardholderPOJO, int i){
-        mCardHolderList.add(i,cardholderPOJO);
+    public void addCardHolder(CardHolderPOJO cardholderPOJO, int i) {
+        mCardHolderList.add(i, cardholderPOJO);
         notifyItemInserted(i);
     }
 
-    public void addCardHolderToEnd(CardHolderPOJO cardholderPOJO){
+    public void addCardHolderToEnd(CardHolderPOJO cardholderPOJO) {
         mCardHolderList.add(cardholderPOJO);
         notifyItemInserted(mCardHolderList.size() - 1);
+    }
+
+    public void addCardHolderToTop(CardHolderPOJO cardholderPOJO) {
+        mCardHolderList.add(0,cardholderPOJO);
+        notifyItemInserted(0);
+    }
+
+    public void deleteCardHolder(CardHolderPOJO cardHolderPOJO) {
+        mCardHolderList.clear();
+    }
+
+    public void addCardHolderToTopOfHoroscopeCard(int position,CardHolderPOJO cardholderPOJO) {
+        if(position <=0){
+            mCardHolderList.add(0,cardholderPOJO);
+            notifyItemInserted(position);
+        }else{
+            mCardHolderList.add(position - 1,cardholderPOJO);
+            notifyItemInserted(position);
+        }
     }
 
     @Override

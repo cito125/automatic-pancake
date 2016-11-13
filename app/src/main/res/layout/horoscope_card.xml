@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/horoscope_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/horoscope_buttons_layout">
+
+    <ImageView
+        android:id="@+id/iv_daily_horoscope"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/daily_forecast" />
+
+        <Button
+            android:id="@+id/bt_aries"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/iv_daily_horoscope"
+            android:layout_rowWeight="1"
+            android:background="@drawable/aries"
+            android:onClick="goToHoroscopePage" />
+
+        <TextView
+            android:id="@+id/tv_aries"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_aries"
+            android:gravity="center"
+            android:text="@string/aries" />
+
+        <Button
+            android:id="@+id/bt_taurus"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/iv_daily_horoscope"
+            android:layout_toEndOf="@+id/bt_aries"
+            android:layout_toRightOf="@+id/bt_aries"
+            android:background="@drawable/taurus"
+            android:onClick="goToHoroscopePage" />
+
+        <TextView
+            android:id="@+id/tv_taurus"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_taurus"
+            android:layout_toEndOf="@+id/tv_aries"
+            android:layout_toRightOf="@+id/tv_aries"
+            android:gravity="center"
+            android:text="@string/taurus" />
+
+        <Button
+            android:id="@+id/bt_gemini"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/iv_daily_horoscope"
+            android:layout_toEndOf="@+id/bt_taurus"
+            android:layout_toRightOf="@+id/bt_taurus"
+            android:background="@drawable/gemini"
+            android:onClick="goToHoroscopePage" />
+
+        <TextView
+            android:id="@+id/tv_gemini"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_gemini"
+            android:layout_toEndOf="@+id/tv_taurus"
+            android:layout_toRightOf="@+id/tv_taurus"
+            android:gravity="center"
+            android:text="@string/gemini" />
+
+        <Button
+            android:id="@+id/bt_cancer"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tv_aries"
+            android:background="@drawable/cancer"
+            android:onClick="goToHoroscopePage" />
+
+        <TextView
+            android:id="@+id/tv_cancer"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_cancer"
+            android:gravity="center"
+            android:text="@string/cancer" />
+
+        <Button
+            android:id="@+id/bt_leo"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tv_taurus"
+            android:layout_toEndOf="@+id/bt_cancer"
+            android:layout_toRightOf="@+id/bt_cancer"
+            android:background="@drawable/leo"
+            android:onClick="goToHoroscopePage" />
+
+        <TextView
+            android:id="@+id/tv_leo"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_leo"
+            android:layout_toEndOf="@+id/tv_cancer"
+            android:layout_toRightOf="@+id/tv_cancer"
+            android:gravity="center"
+            android:text="@string/leo" />
+
+        <Button
+            android:id="@+id/bt_virgo"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tv_gemini"
+            android:layout_toEndOf="@+id/bt_leo"
+            android:layout_toRightOf="@+id/bt_leo"
+            android:background="@drawable/virgo"
+            android:onClick="goToHoroscopePage" />
+
+        <TextView
+            android:id="@+id/tv_virgo"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_virgo"
+            android:layout_toEndOf="@+id/tv_leo"
+            android:layout_toRightOf="@+id/tv_leo"
+            android:gravity="center"
+            android:text="@string/virgo" />
+
+
+        <Button
+            android:id="@+id/bt_libra"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tv_cancer"
+            android:background="@drawable/libra"
+            android:onClick="goToHoroscopePage" />
+
+        <TextView
+            android:id="@+id/tv_libra"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_libra"
+            android:gravity="center"
+            android:text="@string/libra" />
+
+        <Button
+            android:id="@+id/bt_scorpio"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tv_leo"
+            android:layout_toEndOf="@+id/bt_libra"
+            android:layout_toRightOf="@+id/bt_libra"
+            android:background="@drawable/scorpio"
+            android:onClick="goToHoroscopePage" />
+
+        <TextView
+            android:id="@+id/tv_scorpio"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_scorpio"
+            android:layout_toEndOf="@+id/tv_libra"
+            android:layout_toRightOf="@+id/tv_libra"
+            android:gravity="center"
+            android:text="@string/scorpio" />
+
+        <Button
+            android:id="@+id/bt_sagittarius"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tv_virgo"
+            android:layout_toEndOf="@+id/bt_scorpio"
+            android:layout_toRightOf="@+id/bt_scorpio"
+            android:background="@drawable/sagittarius"
+            android:onClick="goToHoroscopePage" />
+
+        <TextView
+            android:id="@+id/tv_sagittarius"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_sagittarius"
+            android:layout_toEndOf="@+id/tv_scorpio"
+            android:layout_toRightOf="@+id/tv_scorpio"
+            android:gravity="center"
+            android:text="@string/sagittarius" />
+
+        <Button
+            android:id="@+id/bt_capricorn"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tv_libra"
+            android:background="@drawable/capricorn"
+            android:onClick="goToHoroscopePage" />
+
+        <TextView
+            android:id="@+id/tv_capricorn"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_capricorn"
+            android:gravity="center"
+            android:text="@string/capricorn" />
+
+        <Button
+            android:id="@+id/bt_aquarius"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tv_scorpio"
+            android:layout_toLeftOf="@+id/bt_pisces"
+            android:layout_toStartOf="@+id/bt_pisces"
+            android:background="@drawable/aquarius"
+            android:onClick="goToHoroscopePage" />
+
+        <TextView
+            android:id="@+id/tv_aquarius"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_aquarius"
+            android:layout_toEndOf="@id/tv_capricorn"
+            android:layout_toRightOf="@id/tv_capricorn"
+            android:gravity="center"
+            android:text="@string/aquarius" />
+
+
+        <Button
+            android:id="@+id/bt_pisces"
+            android:layout_width="130dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/tv_sagittarius"
+            android:layout_toEndOf="@+id/bt_scorpio"
+            android:layout_toRightOf="@+id/bt_scorpio"
+            android:background="@drawable/pisces"
+            android:onClick="goToHoroscopePage" />
+
+        <TextView
+            android:id="@+id/tv_pisces"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_pisces"
+            android:layout_toEndOf="@id/tv_aquarius"
+            android:layout_toRightOf="@+id/tv_aquarius"
+            android:gravity="center"
+            android:text="@string/pisces" />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+

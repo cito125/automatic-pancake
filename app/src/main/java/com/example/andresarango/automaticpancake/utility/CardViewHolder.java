@@ -7,7 +7,7 @@ import android.view.View;
  * Created by andresarango on 10/30/16.
  */
 
-public abstract class CardViewHolder extends RecyclerView.ViewHolder{
+public abstract class CardViewHolder extends RecyclerView.ViewHolder {
     /*
     * Each CardViewHolder is responsible for binding or not binding data to it's view.
     *
@@ -17,6 +17,7 @@ public abstract class CardViewHolder extends RecyclerView.ViewHolder{
     public CardViewHolder(View itemView) {
         super(itemView);
     }
+
     public abstract void bindViewHolder(Object obj);
 
 }
