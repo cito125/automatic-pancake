@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
 //                            mCardAdapter));
 //        }
 
-//        mCardAdapter.addCardHolderToEnd(new CatMemePOJO());
-//        makeNetworkListCall();
+        mCardAdapter.addCardHolder(new CatMemePOJO(), 0);
+        makeNetworkListCall();
 
     }
 
