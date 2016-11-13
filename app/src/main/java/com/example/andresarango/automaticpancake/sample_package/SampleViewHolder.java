@@ -25,6 +25,6 @@ public class SampleViewHolder extends CardViewHolder {
 
     @Override
     public void bindViewHolder(Object chuckPOJO) {
-        testText.setText(((SampleCardHolderPOJO) chuckPOJO).value);
+        testText.setText(((SampleGoogleNowCardHolder) chuckPOJO).value);
     }
 }

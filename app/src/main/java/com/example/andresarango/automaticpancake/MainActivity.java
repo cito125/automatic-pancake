@@ -6,10 +6,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.example.andresarango.automaticpancake.news.NYTimesCardHolderPojo;
+import com.example.andresarango.automaticpancake.news.NYTimesGoogleNowCardHolder;
 import com.example.andresarango.automaticpancake.sample_package.SampleParser;
 import com.example.andresarango.automaticpancake.sample_package.SampleService;
-import com.example.andresarango.automaticpancake.utility.networks.CardHolderCall;
+import com.example.andresarango.automaticpancake.utility.networks.GoogleNowCardCall;
 import com.example.andresarango.automaticpancake.utility.networks.NetworkServices;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mCardRecycler;
     private CardRecycleAdapter mCardAdapter;
-    private List<CardHolderCall> mNetworkList = new ArrayList<>();
+    private List<GoogleNowCardCall> mNetworkList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
         touchMeInDifferentWays.attachToRecyclerView(mCardRecycler);
         NetworkServices netServe = new NetworkServices();
 //        for (int i = 0; i < 10; i++) {
-//            mCardAdapter.addCardHolderToEnd(new SampleCardHolderPOJO());
+//            mCardAdapter.addCardHolderToEnd(new SampleGoogleNowCardHolder());
 //        }
 
-        mCardAdapter.addCardHolderToEnd(new NYTimesCardHolderPojo());
+        mCardAdapter.addCardHolderToEnd(new NYTimesGoogleNowCardHolder());
         for (int i = 0; i < 10; i++) {
             mNetworkList.add(
-                    new CardHolderCall<>(
+                    new GoogleNowCardCall<>(
                             new SampleParser(),
                             netServe.getJSONService(
                                     SampleService.CHUCK_NORRIS_BASE_URL,

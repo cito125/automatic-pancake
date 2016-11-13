@@ -5,8 +5,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import com.example.andresarango.automaticpancake.R;
-import com.example.andresarango.automaticpancake.sample_package.SampleCardHolderPOJO;
-import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 import com.squareup.picasso.Picasso;
 
