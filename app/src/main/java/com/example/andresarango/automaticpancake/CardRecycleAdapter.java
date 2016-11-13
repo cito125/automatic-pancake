@@ -22,7 +22,7 @@ public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> imp
     @Override
     public CardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         for (int i = 0; i < mCardHolderList.size(); i++) {
-            if(System.identityHashCode(mCardHolderList.get(i)) == viewType){
+            if (System.identityHashCode(mCardHolderList.get(i)) == viewType) {
                 return mCardHolderList.get(i).POJOViewholder(parent);
             }
         }
@@ -43,6 +43,25 @@ public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> imp
     public void addCardHolderToEnd(GoogleNowCardHolder cardholderGoogleNow){
         mCardHolderList.add(cardholderGoogleNow);
         notifyItemInserted(mCardHolderList.size() - 1);
+    }
+
+    public void addCardHolderToTop(GoogleNowCardHolder cardholderPOJO) {
+        mCardHolderList.add(0,cardholderPOJO);
+        notifyItemInserted(0);
+    }
+
+    public void deleteCardHolder(GoogleNowCardHolder cardHolderPOJO) {
+        mCardHolderList.clear();
+    }
+
+    public void addCardHolderToTopOfHoroscopeCard(int position,GoogleNowCardHolder cardholderPOJO) {
+        if(position <=0){
+            mCardHolderList.add(0,cardholderPOJO);
+            notifyItemInserted(position);
+        }else{
+            mCardHolderList.add(position - 1,cardholderPOJO);
+            notifyItemInserted(position);
+        }
     }
 
     @Override

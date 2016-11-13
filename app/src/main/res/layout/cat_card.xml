@@ -5,11 +5,52 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/iv_catimage"
-        android:background="#fff01f"
-        android:clickable="true"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_pizza_cat"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:id="@+id/tv_catoftheday"
+            android:textSize="32sp"
+            android:textColor="#000000"
+            android:text="CAT OF THE DAY"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="TOP CAPTION"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="BOTTOM CAPTION"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:id="@+id/bt_makememe"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:text="MAKE THIS A  MEME"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_catimage"
+            android:clickable="false"/>
+    </LinearLayout>
+
+
 
 </android.support.v7.widget.CardView>
