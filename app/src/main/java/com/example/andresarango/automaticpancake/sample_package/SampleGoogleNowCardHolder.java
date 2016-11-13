@@ -3,7 +3,7 @@ package com.example.andresarango.automaticpancake.sample_package;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.example.andresarango.automaticpancake.utility.CardHolderPOJO;
+import com.example.andresarango.automaticpancake.utility.GoogleNowCardHolder;
 import com.example.andresarango.automaticpancake.R;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 
@@ -11,7 +11,7 @@ import com.example.andresarango.automaticpancake.utility.CardViewHolder;
  * Created by andresarango on 10/31/16.
  */
 
-public class SampleCardHolderPOJO implements CardHolderPOJO {
+public class SampleGoogleNowCardHolder implements GoogleNowCardHolder {
 
     String icon_url;
     String id;

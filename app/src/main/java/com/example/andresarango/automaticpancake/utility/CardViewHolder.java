@@ -8,7 +8,7 @@ import android.view.View;
  * <p>
  * Each CardViewHolder is responsible for binding or not binding data to it's view.
  * <p>
- * This data should come from it's corresponding CardHolderPOJO.
+ * This data should come from it's corresponding GoogleNowCardHolder.
  */
 
 public abstract class CardViewHolder extends RecyclerView.ViewHolder {
