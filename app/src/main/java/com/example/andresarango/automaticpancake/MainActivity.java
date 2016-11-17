@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<DisplayHoroscope> call, Response<DisplayHoroscope> response) {
                 DisplayHoroscope horoscopePOJO = response.body();
-                mCardAdapter.addCardHolder(horoscopePOJO, 2);
+                mCardAdapter.addCardHolder(horoscopePOJO, 3);
             }
 
             @Override

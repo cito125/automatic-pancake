@@ -26,17 +26,19 @@
             android:text="CAT OF THE DAY"/>
 
         <EditText
+            android:id="@+id/et_top_caption"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="TOP CAPTION"/>
 
         <EditText
+            android:id="@+id/et_bottom_caption"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="BOTTOM CAPTION"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:id="@+id/bt_makememe"
