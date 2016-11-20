@@ -1,4 +1,3 @@
-
 package com.example.andresarango.automaticpancake.news.nytimespojo;
 
 public class Multimedium {

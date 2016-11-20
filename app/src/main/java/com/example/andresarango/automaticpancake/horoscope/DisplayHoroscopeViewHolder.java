@@ -5,9 +5,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.andresarango.automaticpancake.R;
+import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO.DisplayHoroscope;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by catwong on 11/12/16.
@@ -31,7 +30,6 @@ public class DisplayHoroscopeViewHolder extends CardViewHolder{
     @Override
     public void bindViewHolder(Object obj) {
         DisplayHoroscope horoscopePOJO = (DisplayHoroscope) obj;
-//        image_sign.setImageResource(R.drawable.cat_placeholder);
         date.setText(horoscopePOJO.getDate());
         sunsign.setText(horoscopePOJO.getSunsign());
         horoscope.setText(horoscopePOJO.getHoroscope());

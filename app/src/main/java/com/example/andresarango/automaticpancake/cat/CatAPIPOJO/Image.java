@@ -1,15 +1,31 @@
-package com.example.andresarango.automaticpancake.cat;
+package com.example.andresarango.automaticpancake.cat.CatAPIPOJO;
+
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Root;
+
+import java.util.List;
 
 /**
  * Created by catwong on 11/4/16.
  */
 
+@Root(name = "image")
 public class Image {
 
+    @ElementList(inline = true)
+    List<Image> imageList;
+
+    @Element(name = "url")
     private String url;
+
+    @Element(name = "id")
     private String id;
+
+    @Element(name = "source_url")
     private String source_url;
     public final static String CAT_API_BASE_URL = "http://thecatapi.com/api/";
+
 
 
     public String getUrl() {
@@ -34,5 +50,11 @@ public class Image {
 
     public void setSource_url(String source_url) {
         this.source_url = source_url;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "ClassPojo [id = "+id+", source_url = "+source_url+", url = "+url+"]";
     }
 }
