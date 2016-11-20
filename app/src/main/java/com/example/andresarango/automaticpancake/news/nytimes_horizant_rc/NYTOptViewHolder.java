@@ -59,7 +59,6 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder {
 
     }
 
-
     private void runNYTimesAPI(String section) {
         mNYTimmesAPI = NYTimesAPI.getInstance();
         mNYTimmesAPI.getSection(section).enqueue(new Callback<Article>() {

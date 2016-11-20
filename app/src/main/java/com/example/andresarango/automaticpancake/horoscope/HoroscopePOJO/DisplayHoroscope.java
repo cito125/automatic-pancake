@@ -1,26 +1,31 @@
-package com.example.andresarango.automaticpancake.horoscope;
+package com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.andresarango.automaticpancake.R;
+import com.example.andresarango.automaticpancake.horoscope.DisplayHoroscopeViewHolder;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 import com.example.andresarango.automaticpancake.utility.GoogleNowCardHolder;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by catwong on 11/12/16.
  */
 
-public class DisplayHoroscope implements GoogleNowCardHolder {
+public class DisplayHoroscope implements GoogleNowCardHolder, Serializable {
 
     @SerializedName("date")
     @Expose
     private String date;
+
     @SerializedName("horoscope")
     @Expose
     private String horoscope;
+
     @SerializedName("sunsign")
     @Expose
     private String sunsign;

@@ -1,9 +1,10 @@
-package com.example.andresarango.automaticpancake.horoscope;
+package com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.andresarango.automaticpancake.R;
+import com.example.andresarango.automaticpancake.horoscope.HoroscopeViewHolder;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 import com.example.andresarango.automaticpancake.utility.GoogleNowCardHolder;
 
