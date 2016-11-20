@@ -47,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
         mCardAdapter.addCardHolderToEnd(new CatMemePOJO());
         mCardAdapter.addCardHolderToEnd(new HoroscopePOJO());
 
-        NetworkServices catAPI = new NetworkServices();
-        catAPI.getXMLService(CAT_API_URL, CatAPIService.class);
         makeNetworkListCall();
 
     }

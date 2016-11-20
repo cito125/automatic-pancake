@@ -6,13 +6,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.andresarango.automaticpancake.R;
 
+import com.example.andresarango.automaticpancake.cat.CatAPINetwork.CatAPIParser;
 import com.example.andresarango.automaticpancake.cat.CatAPINetwork.CatAPIService;
+import com.example.andresarango.automaticpancake.cat.CatAPIPOJO.CatMemePOJO;
+import com.example.andresarango.automaticpancake.news.nytimes_network.NYTimesAPI;
+import com.example.andresarango.automaticpancake.news.nytimespojo.Article;
+import com.example.andresarango.automaticpancake.news.nytimespojo.Multimedium;
+import com.example.andresarango.automaticpancake.news.nytimespojo.Result;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 import com.example.andresarango.automaticpancake.utility.networks.NetworkServices;
 import com.squareup.picasso.Picasso;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by andresarango on 10/30/16.
@@ -27,11 +40,12 @@ public class CatCardViewHolder extends CardViewHolder {
     Button makeMeme;
     EditText mTopCaption;
     EditText mBottomCaption;
-    private CatAPIService apiService;
+    CatAPIParser mCatAPI;
+    String catMemeUrl;
+    TextView cat;
 
     private final String URL_PIC = "http://thecatapi.com/api/images/get?format=src&results_per_page=1";
     private final String CAP_API_BASE_URL = "\"http://thecatapi.com/";
-    private final String URL_TEST = "http://25.media.tumblr.com/tumblr_m2avo9tQRy1qze0hyo1_500.jpg";
 
     public CatCardViewHolder(View itemView) {
         super(itemView);
@@ -41,11 +55,12 @@ public class CatCardViewHolder extends CardViewHolder {
         catImage = (ImageView) itemView.findViewById(R.id.iv_catimage);
         cat_Banner = (ImageView) itemView.findViewById(R.id.iv_cat_banner);
         makeMeme = (Button) itemView.findViewById(R.id.bt_makememe);
-
     }
 
     @Override
     public void bindViewHolder(Object obj) {
+        String meme = runCatAPI();
+        System.out.println("MEME URL: " + meme);
         Picasso.with(itemView.getContext())
                 .load(URL_PIC)
                 .placeholder(R.drawable.cat_placeholder)
@@ -54,15 +69,23 @@ public class CatCardViewHolder extends CardViewHolder {
                 .into(catImage);
         System.out.println("URL PIC: " + URL_PIC);
 
+
         makeMeme.setOnClickListener(new View.OnClickListener() {
-            String memeUrl = memeURL();
             @Override
             public void onClick(View view) {
-                new AsyncTaskRunner().execute(memeUrl);
+                String memeUrl = memeURL();
+                Picasso.with(itemView.getContext())
+                        .load(memeUrl)
+                        .placeholder(R.drawable.cat_placeholder)
+                        .resize(1200, 1200)
+                        .centerInside()
+                        .into(catImage);
+                System.out.println("MEME URL after OnClickListener Called: " + memeUrl);
             }
-        });
 
+        });
     }
+
 
     public String memeURL() {
         // "https://memegen.link/custom/my-other-background/is-the-grand-canyon.jpg?alt=http://thecatapi.com/api/images/get?api_key=MTMzNDM2&format=src&results_per_page=1" //
@@ -86,29 +109,23 @@ public class CatCardViewHolder extends CardViewHolder {
         return memeURLString;
     }
 
-    private class AsyncTaskRunner extends AsyncTask<String, String, String> {
-
-        @Override
-        protected void onPostExecute(final String result) {
-            makeMeme.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Picasso.with(itemView.getContext())
-                            .load(result)
-                            .placeholder(R.drawable.cat_placeholder)
-                            .resize(1200, 1200)
-                            .centerInside()
-                            .into(catImage);
-                    System.out.println("MEME URL after OnClickListener Called: " + result);
+    private String runCatAPI() {
+        mCatAPI = CatAPIParser.getInstance();
+        mCatAPI.getCats().enqueue(new Callback<CatMemePOJO>() {
+            @Override
+            public void onResponse(Call<CatMemePOJO> call, Response<CatMemePOJO> response) {
+                if (response.isSuccessful()) {
+                    cat.setText(response.body().getResponse().getData().getImages().getImage().getUrl());
+                    catMemeUrl = response.body().getResponse().getData().getImages().getImage().getUrl();
                 }
-            });
-        }
+            }
+            @Override
+            public void onFailure(Call<CatMemePOJO> call, Throwable t) {
 
-        @Override
-        protected String doInBackground(String... strings) {
-            String memeUrl = memeURL();
-            return memeUrl;
-        }
+            }
+        });
+        return catMemeUrl;
+
     }
 }
 
