@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.View;
 
 import com.example.andresarango.automaticpancake.cat.CatAPINetwork.CatAPIService;
 import com.example.andresarango.automaticpancake.cat.CatAPIPOJO.CatMemePOJO;
@@ -57,5 +58,4 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 }
