@@ -6,13 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.view.View;
 
 import com.example.andresarango.automaticpancake.cat.CatMemePOJO;
 import com.example.andresarango.automaticpancake.horoscope.DisplayHoroscope;
 import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO;
 import com.example.andresarango.automaticpancake.horoscope.HoroscopeService;
 import com.example.andresarango.automaticpancake.news.NYTimesGoogleNowCardHolder;
+import com.example.andresarango.automaticpancake.reminder.RemindMe;
 import com.example.andresarango.automaticpancake.utility.networks.GoogleNowCardCall;
 import com.example.andresarango.automaticpancake.utility.networks.NetworkServices;
 
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         ItemTouchHelper touchMeInDifferentWays = new ItemTouchHelper(new TouchMe(mCardAdapter));
         NetworkServices networkServices = new NetworkServices();
         touchMeInDifferentWays.attachToRecyclerView(mCardRecycler);
+        mCardAdapter.addCardHolderToEnd(new RemindMe());
         mCardAdapter.addCardHolderToEnd(new NYTimesGoogleNowCardHolder());
         mCardAdapter.addCardHolderToEnd(new CatMemePOJO());
         mCardAdapter.addCardHolderToEnd(new HoroscopePOJO());
@@ -55,34 +56,34 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void goToHoroscopePage(View view) {
-        if (view.getId() == R.id.bt_aries)
-            getHoroscopeInfo("Aries");
-        if (view.getId() == R.id.bt_taurus)
-            getHoroscopeInfo("Taurus");
-        if (view.getId() == R.id.bt_gemini)
-            getHoroscopeInfo("Gemini");
-        if (view.getId() == R.id.bt_cancer)
-            getHoroscopeInfo("Cancer");
-        if (view.getId() == R.id.bt_leo)
-            getHoroscopeInfo("Leo");
-        if (view.getId() == R.id.bt_virgo)
-            getHoroscopeInfo("Virgo");
-        if (view.getId() == R.id.bt_libra)
-            getHoroscopeInfo("Libra");
-        if (view.getId() == R.id.bt_scorpio)
-            getHoroscopeInfo("Scorpio");
-        if (view.getId() == R.id.bt_sagittarius)
-            getHoroscopeInfo("Sagittarius");
-        if (view.getId() == R.id.bt_capricorn)
-            getHoroscopeInfo("Capricorn");
-        if (view.getId() == R.id.bt_aquarius)
-            getHoroscopeInfo("Aquarius");
-        if (view.getId() == R.id.bt_pisces) {
-            getHoroscopeInfo("Pisces");
-
-        }
-    }
+//    public void goToHoroscopePage(View view) {
+//        if (view.getId() == R.id.bt_aries)
+//            getHoroscopeInfo("Aries");
+//        if (view.getId() == R.id.bt_taurus)
+//            getHoroscopeInfo("Taurus");
+//        if (view.getId() == R.id.bt_gemini)
+//            getHoroscopeInfo("Gemini");
+//        if (view.getId() == R.id.bt_cancer)
+//            getHoroscopeInfo("Cancer");
+//        if (view.getId() == R.id.bt_leo)
+//            getHoroscopeInfo("Leo");
+//        if (view.getId() == R.id.bt_virgo)
+//            getHoroscopeInfo("Virgo");
+//        if (view.getId() == R.id.bt_libra)
+//            getHoroscopeInfo("Libra");
+//        if (view.getId() == R.id.bt_scorpio)
+//            getHoroscopeInfo("Scorpio");
+//        if (view.getId() == R.id.bt_sagittarius)
+//            getHoroscopeInfo("Sagittarius");
+//        if (view.getId() == R.id.bt_capricorn)
+//            getHoroscopeInfo("Capricorn");
+//        if (view.getId() == R.id.bt_aquarius)
+//            getHoroscopeInfo("Aquarius");
+//        if (view.getId() == R.id.bt_pisces) {
+//            getHoroscopeInfo("Pisces");
+//
+//        }
+//    }
 
     public void getHoroscopeInfo(String sign) {
         NetworkServices networkServices = new NetworkServices();

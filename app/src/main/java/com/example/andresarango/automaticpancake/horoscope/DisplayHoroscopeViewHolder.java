@@ -6,8 +6,6 @@ import android.widget.TextView;
 
 import com.example.andresarango.automaticpancake.R;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by catwong on 11/12/16.
