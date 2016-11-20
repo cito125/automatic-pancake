@@ -18,7 +18,7 @@ public class RemindMe implements GoogleNowCardHolder {
 
     Context context;
 
-    public void RemindMe (Context context) {
+    public void RemindMe(Context context) {
         this.context = context;
     }
 
@@ -35,19 +35,19 @@ public class RemindMe implements GoogleNowCardHolder {
     }
 
 
-    public void save (View view) {
+    public void save(View view) {
         String store = name.getText().toString();
         android.content.SharedPreferences.Editor editor = sf.edit();
         editor.putString(saveIt, store);
         editor.commit();
     }
 
-    public void clear (View v) {
+    public void clear(View v) {
         name = (EditText) v.findViewById(R.id.text_to_save);
         name.setText("");
     }
 
-    public void retrieve (View v) {
+    public void retrieve(View v) {
         name = (EditText) v.findViewById(R.id.text_to_save);
         sf = context.getSharedPreferences(preference, Context.MODE_PRIVATE);
 
