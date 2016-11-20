@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.view.View;
 
 import com.example.andresarango.automaticpancake.cat.CatAPINetwork.CatAPIService;
 import com.example.andresarango.automaticpancake.cat.CatAPIPOJO.CatMemePOJO;
@@ -15,6 +14,7 @@ import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO.Display
 import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO.HoroscopePOJO;
 import com.example.andresarango.automaticpancake.horoscope.HoroscopeNetwork.HoroscopeService;
 import com.example.andresarango.automaticpancake.news.NYTimesGoogleNowCardHolder;
+import com.example.andresarango.automaticpancake.reminder.RemindMe;
 import com.example.andresarango.automaticpancake.utility.networks.GoogleNowCardCall;
 import com.example.andresarango.automaticpancake.utility.networks.NetworkServices;
 
@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mCardRecycler;
     private CardRecycleAdapter mCardAdapter;
     private List<GoogleNowCardCall> mNetworkList = new ArrayList<>();
-    private String CAT_API_URL = "http://thecatapi.com/api/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         mCardRecycler.setAdapter(mCardAdapter);
         ItemTouchHelper touchMeInDifferentWays = new ItemTouchHelper(new TouchMe(mCardAdapter));
         touchMeInDifferentWays.attachToRecyclerView(mCardRecycler);
+        mCardAdapter.addCardHolderToEnd(new RemindMe());
         mCardAdapter.addCardHolderToEnd(new NYTimesGoogleNowCardHolder());
         mCardAdapter.addCardHolderToEnd(new CatMemePOJO());
         mCardAdapter.addCardHolderToEnd(new HoroscopePOJO());
