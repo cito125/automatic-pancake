@@ -1,6 +1,6 @@
-package com.example.andresarango.automaticpancake.horoscope;
+package com.example.andresarango.automaticpancake.horoscope.HoroscopeNetwork;
 
-import com.example.andresarango.automaticpancake.cat.CatMemePOJO;
+import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO.DisplayHoroscope;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
