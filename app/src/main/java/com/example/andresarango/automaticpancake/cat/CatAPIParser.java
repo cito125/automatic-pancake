@@ -1,6 +1,7 @@
 package com.example.andresarango.automaticpancake.cat;
 
 
+import com.example.andresarango.automaticpancake.cat.CatAPIPOJO.CatMemePOJO;
 import com.example.andresarango.automaticpancake.utility.GoogleNowCardHolder;
 import com.example.andresarango.automaticpancake.utility.networks.GoogleNowCardParser;
 

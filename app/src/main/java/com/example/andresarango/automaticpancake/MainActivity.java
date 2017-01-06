@@ -6,25 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.view.View;
 
-import com.example.andresarango.automaticpancake.cat.CatAPINetwork.CatAPIService;
 import com.example.andresarango.automaticpancake.cat.CatAPIPOJO.CatMemePOJO;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopeFragment;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO.DisplayHoroscope;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO.HoroscopePOJO;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopeNetwork.HoroscopeService;
+import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJOs.HoroscopePOJO;
 import com.example.andresarango.automaticpancake.news.NYTimesGoogleNowCardHolder;
 import com.example.andresarango.automaticpancake.reminder.RemindMe;
 import com.example.andresarango.automaticpancake.utility.networks.GoogleNowCardCall;
-import com.example.andresarango.automaticpancake.utility.networks.NetworkServices;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mCardAdapter.addCardHolderToEnd(new NYTimesGoogleNowCardHolder());
         mCardAdapter.addCardHolderToEnd(new CatMemePOJO());
         mCardAdapter.addCardHolderToEnd(new HoroscopePOJO());
+        
 
         makeNetworkListCall();
 

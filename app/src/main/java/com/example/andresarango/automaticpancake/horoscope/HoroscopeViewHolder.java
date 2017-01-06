@@ -2,17 +2,14 @@ package com.example.andresarango.automaticpancake.horoscope;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.andresarango.automaticpancake.R;
 import com.example.andresarango.automaticpancake.cat.CatCardViewHolder;
 import com.example.andresarango.automaticpancake.horoscope.HoroscopeNetwork.HoroscopeService;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO.DisplayHoroscope;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO.HoroscopePOJO;
+import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJOs.DisplayHoroscope;
+import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJOs.HoroscopePOJO;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 import com.example.andresarango.automaticpancake.utility.networks.NetworkServices;
 

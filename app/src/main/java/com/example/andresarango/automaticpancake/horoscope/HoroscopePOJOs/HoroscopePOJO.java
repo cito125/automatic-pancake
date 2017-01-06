@@ -1,4 +1,4 @@
-package com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO;
+package com.example.andresarango.automaticpancake.horoscope.HoroscopePOJOs;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;

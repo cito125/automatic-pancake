@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,6 +17,8 @@ import com.example.andresarango.automaticpancake.news.nytimespojo.Result;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,7 +33,7 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder {
     TextView mTitleTV;
     TextView mAbstractTV;
     ImageView mArticlePic;
-    NYTimesAPI mNYTimmesAPI;
+    @Inject NYTimesAPI mNYTimmesAPI;
     String mURLOfArticle;
     Context mContext;
 
@@ -61,6 +64,9 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder {
 
     private void runNYTimesAPI(String section) {
         mNYTimmesAPI = NYTimesAPI.getInstance();
+        if(section == null){
+            return;
+        }
         mNYTimmesAPI.getSection(section).enqueue(new Callback<Article>() {
             @Override
             public void onResponse(Call<Article> call, Response<Article> response) {

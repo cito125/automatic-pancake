@@ -1,6 +1,5 @@
 package com.example.andresarango.automaticpancake.horoscope;
 
-import com.example.andresarango.automaticpancake.cat.CatMemePOJO;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

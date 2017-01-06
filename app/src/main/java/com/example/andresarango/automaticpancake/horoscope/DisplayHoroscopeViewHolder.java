@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.andresarango.automaticpancake.R;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJO.DisplayHoroscope;
+import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJOs.DisplayHoroscope;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 
 /**

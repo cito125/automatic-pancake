@@ -1,5 +1,7 @@
 package com.example.andresarango.automaticpancake.cat;
 
+import com.example.andresarango.automaticpancake.cat.CatAPIPOJO.CatMemePOJO;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 
