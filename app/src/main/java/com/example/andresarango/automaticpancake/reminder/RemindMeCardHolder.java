@@ -14,7 +14,7 @@ import com.example.andresarango.automaticpancake.utility.GoogleNowCardHolder;
  * Created by andresarango on 10/30/16.
  */
 
-public class RemindMe implements GoogleNowCardHolder {
+public class RemindMeCardHolder implements GoogleNowCardHolder {
 
     Context context;
 

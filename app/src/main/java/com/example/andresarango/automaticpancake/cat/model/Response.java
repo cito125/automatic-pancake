@@ -1,4 +1,4 @@
-package com.example.andresarango.automaticpancake.cat.CatAPIPOJO;
+package com.example.andresarango.automaticpancake.cat.model;
 
 import org.simpleframework.xml.Root;
 
@@ -20,8 +20,7 @@ public class Response {
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [data = "+data+"]";
+    public String toString() {
+        return "ClassPojo [data = " + data + "]";
     }
 }

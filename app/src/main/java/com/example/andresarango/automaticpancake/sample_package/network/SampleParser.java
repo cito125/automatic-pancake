@@ -1,5 +1,7 @@
-package com.example.andresarango.automaticpancake.sample_package;
+package com.example.andresarango.automaticpancake.sample_package.network;
 
+import com.example.andresarango.automaticpancake.sample_package.model.SampleGoogleNowCardHolder;
+import com.example.andresarango.automaticpancake.sample_package.model.SamplePOJO;
 import com.example.andresarango.automaticpancake.utility.GoogleNowCardHolder;
 import com.example.andresarango.automaticpancake.utility.networks.GoogleNowCardParser;
 
@@ -18,7 +20,7 @@ public class SampleParser implements GoogleNowCardParser {
     @Override
     public <T> GoogleNowCardHolder parseService(T toParse) {
         SampleGoogleNowCardHolder cardHolder = new SampleGoogleNowCardHolder();
-        cardHolder.setValue(((SamplePOJO) toParse).value);
+        cardHolder.setValue(((SamplePOJO) toParse).getValue());
         return cardHolder;
     }
 }

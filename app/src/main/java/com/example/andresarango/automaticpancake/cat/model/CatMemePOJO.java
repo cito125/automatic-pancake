@@ -1,32 +1,29 @@
-package com.example.andresarango.automaticpancake.cat.CatAPIPOJO;
+package com.example.andresarango.automaticpancake.cat.model;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.andresarango.automaticpancake.R;
-import com.example.andresarango.automaticpancake.cat.CatCardViewHolder;
+import com.example.andresarango.automaticpancake.cat.view.CatCardViewHolder;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 import com.example.andresarango.automaticpancake.utility.GoogleNowCardHolder;
 
-import org.simpleframework.xml.Root;
-
 /**
  * http://thecatapi.com/api/images/get?api_key=MTMzNDM2&format=src&results_per_page=1
-
- <response>
- <data>
- <images>
- <image>
- <url>
- http://24.media.tumblr.com/tumblr_m3vxk5jAZH1r81frto1_500.jpg
- </url>
- <id>4tk</id>
- <source_url>http://thecatapi.com/?id=4tk</source_url>
- </image>
- </images>
- </data>
- </response>
-
+ * <p>
+ * <response>
+ * <data>
+ * <images>
+ * <image>
+ * <url>
+ * http://24.media.tumblr.com/tumblr_m3vxk5jAZH1r81frto1_500.jpg
+ * </url>
+ * <id>4tk</id>
+ * <source_url>http://thecatapi.com/?id=4tk</source_url>
+ * </image>
+ * </images>
+ * </data>
+ * </response>
  */
 
 public class CatMemePOJO implements GoogleNowCardHolder {
@@ -42,9 +39,8 @@ public class CatMemePOJO implements GoogleNowCardHolder {
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [response = "+response+"]";
+    public String toString() {
+        return "ClassPojo [response = " + response + "]";
     }
 
     @Override

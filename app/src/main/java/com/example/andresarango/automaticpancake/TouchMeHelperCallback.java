@@ -9,11 +9,11 @@ import com.example.andresarango.automaticpancake.news.nytimes_horizant_rc.NYTime
  * Created by andresarango on 11/10/16.
  */
 
-public class TouchMe extends ItemTouchHelper.Callback {
+public class TouchMeHelperCallback extends ItemTouchHelper.Callback {
 
     private final CardRecycleAdapter mAdapter;
 
-    public TouchMe(CardRecycleAdapter adapter) {
+    public TouchMeHelperCallback(CardRecycleAdapter adapter) {
         mAdapter = adapter;
     }
 

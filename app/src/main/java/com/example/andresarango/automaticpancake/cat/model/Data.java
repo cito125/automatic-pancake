@@ -1,4 +1,4 @@
-package com.example.andresarango.automaticpancake.cat.CatAPIPOJO;
+package com.example.andresarango.automaticpancake.cat.model;
 
 import org.simpleframework.xml.Root;
 
@@ -15,13 +15,8 @@ public class Data {
         return images;
     }
 
-    public void setImages(Images images) {
-        this.images = images;
-    }
-
     @Override
-    public String toString()
-    {
-        return "ClassPojo [images = "+images+"]";
+    public String toString() {
+        return "ClassPojo [images = " + images + "]";
     }
 }

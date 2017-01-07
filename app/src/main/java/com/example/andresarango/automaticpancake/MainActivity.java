@@ -7,10 +7,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.example.andresarango.automaticpancake.cat.CatAPIPOJO.CatMemePOJO;
+import com.example.andresarango.automaticpancake.cat.model.CatMemePOJO;
 import com.example.andresarango.automaticpancake.horoscope.models.HoroscopeCardHolder;
 import com.example.andresarango.automaticpancake.news.NYTimesGoogleNowCardHolder;
-import com.example.andresarango.automaticpancake.reminder.RemindMe;
+import com.example.andresarango.automaticpancake.reminder.RemindMeCardHolder;
 import com.example.andresarango.automaticpancake.utility.networks.GoogleNowCardCall;
 
 import java.util.ArrayList;
@@ -31,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
         mCardRecycler.setLayoutManager(new LinearLayoutManager(this));
         mCardAdapter = new CardRecycleAdapter();
         mCardRecycler.setAdapter(mCardAdapter);
-        ItemTouchHelper touchMeInDifferentWays = new ItemTouchHelper(new TouchMe(mCardAdapter));
+        ItemTouchHelper touchMeInDifferentWays = new ItemTouchHelper(new TouchMeHelperCallback(mCardAdapter));
         touchMeInDifferentWays.attachToRecyclerView(mCardRecycler);
-        mCardAdapter.addCardHolderToEnd(new RemindMe());
+        mCardAdapter.addCardHolderToEnd(new RemindMeCardHolder());
         mCardAdapter.addCardHolderToEnd(new NYTimesGoogleNowCardHolder());
         mCardAdapter.addCardHolderToEnd(new CatMemePOJO());
         mCardAdapter.addCardHolderToEnd(new HoroscopeCardHolder());

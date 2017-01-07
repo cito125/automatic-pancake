@@ -1,4 +1,6 @@
-package com.example.andresarango.automaticpancake.sample_package;
+package com.example.andresarango.automaticpancake.sample_package.network;
+
+import com.example.andresarango.automaticpancake.sample_package.model.SamplePOJO;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

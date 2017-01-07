@@ -1,10 +1,11 @@
-package com.example.andresarango.automaticpancake.sample_package;
+package com.example.andresarango.automaticpancake.sample_package.view;
 
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.andresarango.automaticpancake.R;
+import com.example.andresarango.automaticpancake.sample_package.model.SampleGoogleNowCardHolder;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 
 /**
@@ -25,6 +26,6 @@ public class SampleViewHolder extends CardViewHolder {
 
     @Override
     public void bindViewHolder(Object chuckPOJO) {
-        testText.setText(((SampleGoogleNowCardHolder) chuckPOJO).value);
+        testText.setText(((SampleGoogleNowCardHolder) chuckPOJO).getValue());
     }
 }

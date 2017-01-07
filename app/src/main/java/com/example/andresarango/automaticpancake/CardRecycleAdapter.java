@@ -29,24 +29,24 @@ public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> imp
         return null;
     }
 
-    public void setCardHolderList(List<GoogleNowCardHolder> updateList){
+    public void setCardHolderList(List<GoogleNowCardHolder> updateList) {
         mCardHolderList.clear();
         mCardHolderList.addAll(updateList);
         notifyDataSetChanged();
     }
 
-    public void addCardHolder(GoogleNowCardHolder cardholderGoogleNow, int i){
+    public void addCardHolder(GoogleNowCardHolder cardholderGoogleNow, int i) {
         mCardHolderList.add(i, cardholderGoogleNow);
         notifyItemInserted(i);
     }
 
-    public void addCardHolderToEnd(GoogleNowCardHolder cardholderGoogleNow){
+    public void addCardHolderToEnd(GoogleNowCardHolder cardholderGoogleNow) {
         mCardHolderList.add(cardholderGoogleNow);
         notifyItemInserted(mCardHolderList.size() - 1);
     }
 
     public void addCardHolderToTop(GoogleNowCardHolder cardholderPOJO) {
-        mCardHolderList.add(0,cardholderPOJO);
+        mCardHolderList.add(0, cardholderPOJO);
         notifyItemInserted(0);
     }
 
@@ -54,12 +54,12 @@ public class CardRecycleAdapter extends RecyclerView.Adapter<CardViewHolder> imp
         mCardHolderList.clear();
     }
 
-    public void addCardHolderToTopOfHoroscopeCard(int position,GoogleNowCardHolder cardholderPOJO) {
-        if(position <=0){
-            mCardHolderList.add(0,cardholderPOJO);
+    public void addCardHolderToTopOfHoroscopeCard(int position, GoogleNowCardHolder cardholderPOJO) {
+        if (position <= 0) {
+            mCardHolderList.add(0, cardholderPOJO);
             notifyItemInserted(position);
-        }else{
-            mCardHolderList.add(position - 1,cardholderPOJO);
+        } else {
+            mCardHolderList.add(position - 1, cardholderPOJO);
             notifyItemInserted(position);
         }
     }

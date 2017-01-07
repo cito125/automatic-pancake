@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.andresarango.automaticpancake.R;
-import com.example.andresarango.automaticpancake.cat.CatCardViewHolder;
+import com.example.andresarango.automaticpancake.cat.view.CatCardViewHolder;
 import com.example.andresarango.automaticpancake.horoscope.HoroscopeFragment;
 import com.example.andresarango.automaticpancake.horoscope.models.DisplayHoroscopeCardHolder;
 import com.example.andresarango.automaticpancake.horoscope.models.HoroscopeCardHolder;

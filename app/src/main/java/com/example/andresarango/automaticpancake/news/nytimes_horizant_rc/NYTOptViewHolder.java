@@ -33,7 +33,8 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder {
     TextView mTitleTV;
     TextView mAbstractTV;
     ImageView mArticlePic;
-    @Inject NYTimesAPI mNYTimmesAPI;
+    @Inject
+    NYTimesAPI mNYTimmesAPI;
     String mURLOfArticle;
     Context mContext;
 
@@ -64,7 +65,7 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder {
 
     private void runNYTimesAPI(String section) {
         mNYTimmesAPI = NYTimesAPI.getInstance();
-        if(section == null){
+        if (section == null) {
             return;
         }
         mNYTimmesAPI.getSection(section).enqueue(new Callback<Article>() {

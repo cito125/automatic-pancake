@@ -1,6 +1,5 @@
-package com.example.andresarango.automaticpancake.cat;
+package com.example.andresarango.automaticpancake.cat.view;
 
-import android.os.AsyncTask;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
@@ -10,18 +9,10 @@ import android.widget.TextView;
 
 import com.example.andresarango.automaticpancake.R;
 
-import com.example.andresarango.automaticpancake.cat.CatAPINetwork.CatAPIParser;
-import com.example.andresarango.automaticpancake.cat.CatAPINetwork.CatAPIService;
-import com.example.andresarango.automaticpancake.cat.CatAPIPOJO.CatMemePOJO;
-import com.example.andresarango.automaticpancake.news.nytimes_network.NYTimesAPI;
-import com.example.andresarango.automaticpancake.news.nytimespojo.Article;
-import com.example.andresarango.automaticpancake.news.nytimespojo.Multimedium;
-import com.example.andresarango.automaticpancake.news.nytimespojo.Result;
+import com.example.andresarango.automaticpancake.cat.network.CatAPIParser;
+import com.example.andresarango.automaticpancake.cat.model.CatMemePOJO;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
-import com.example.andresarango.automaticpancake.utility.networks.NetworkServices;
 import com.squareup.picasso.Picasso;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -119,6 +110,7 @@ public class CatCardViewHolder extends CardViewHolder {
                     catMemeUrl = response.body().getResponse().getData().getImages().getImage().getUrl();
                 }
             }
+
             @Override
             public void onFailure(Call<CatMemePOJO> call, Throwable t) {
 

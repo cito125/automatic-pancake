@@ -17,14 +17,14 @@ import retrofit2.http.Query;
 public interface HoroscopeService {
 
     @GET("/horoscope/today/{sign}")
-    Call<DisplayHoroscopeCardHolder> getTodayHoroscope(@Path("sign")String sunsign);
+    Call<DisplayHoroscopeCardHolder> getTodayHoroscope(@Path("sign") String sunsign);
 
     @GET("/horoscope/week/{sunsign}")
-    Call<DisplayHoroscopeCardHolder> getWeekHoroscope(@Query("sign")String sunsign);
+    Call<DisplayHoroscopeCardHolder> getWeekHoroscope(@Query("sign") String sunsign);
 
     @GET("/horoscope/month/{sunsign}")
-    Call<DisplayHoroscopeCardHolder> getMonthHoroscope(@Query("sign")String sunsign);
+    Call<DisplayHoroscopeCardHolder> getMonthHoroscope(@Query("sign") String sunsign);
 
     @GET("knowmore/{sunsign}")
-    Call<DisplayHoroscopeCardHolder> getMoreInfo(@Query("sign")String sunsign);
+    Call<DisplayHoroscopeCardHolder> getMoreInfo(@Query("sign") String sunsign);
 }

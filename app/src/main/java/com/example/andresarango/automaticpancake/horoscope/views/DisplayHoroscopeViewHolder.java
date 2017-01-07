@@ -12,7 +12,7 @@ import com.example.andresarango.automaticpancake.utility.CardViewHolder;
  * Created by catwong on 11/12/16.
  */
 
-public class DisplayHoroscopeViewHolder extends CardViewHolder{
+public class DisplayHoroscopeViewHolder extends CardViewHolder {
 
     ImageView image_sign;
     TextView date;

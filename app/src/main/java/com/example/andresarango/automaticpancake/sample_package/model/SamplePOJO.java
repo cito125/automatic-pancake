@@ -1,4 +1,4 @@
-package com.example.andresarango.automaticpancake.sample_package;
+package com.example.andresarango.automaticpancake.sample_package.model;
 
 /**
  * Created by andresarango on 10/22/16.
@@ -17,23 +17,7 @@ package com.example.andresarango.automaticpancake.sample_package;
 
 public class SamplePOJO {
 
-
-    String icon_url;
-    String id;
-    String url;
     String value;
-
-    public String getIcon_url() {
-        return icon_url;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getUrl() {
-        return url;
-    }
 
     public String getValue() {
         return value;
