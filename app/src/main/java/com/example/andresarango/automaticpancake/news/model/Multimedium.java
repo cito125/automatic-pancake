@@ -1,4 +1,4 @@
-package com.example.andresarango.automaticpancake.news.nytimespojo;
+package com.example.andresarango.automaticpancake.news.model;
 
 public class Multimedium {
 

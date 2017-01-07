@@ -1,5 +1,5 @@
 
-package com.example.andresarango.automaticpancake.news.nytimespojo;
+package com.example.andresarango.automaticpancake.news.model;
 
 
 import com.google.gson.annotations.SerializedName;

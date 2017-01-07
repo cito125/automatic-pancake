@@ -9,7 +9,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 
 import com.example.andresarango.automaticpancake.cat.model.CatMemePOJO;
 import com.example.andresarango.automaticpancake.horoscope.models.HoroscopeCardHolder;
-import com.example.andresarango.automaticpancake.news.NYTimesGoogleNowCardHolder;
+import com.example.andresarango.automaticpancake.news.NYTGoogleNowCardHolder;
 import com.example.andresarango.automaticpancake.reminder.RemindMeCardHolder;
 import com.example.andresarango.automaticpancake.utility.networks.GoogleNowCardCall;
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         ItemTouchHelper touchMeInDifferentWays = new ItemTouchHelper(new TouchMeHelperCallback(mCardAdapter));
         touchMeInDifferentWays.attachToRecyclerView(mCardRecycler);
         mCardAdapter.addCardHolderToEnd(new RemindMeCardHolder());
-        mCardAdapter.addCardHolderToEnd(new NYTimesGoogleNowCardHolder());
+        mCardAdapter.addCardHolderToEnd(new NYTGoogleNowCardHolder());
         mCardAdapter.addCardHolderToEnd(new CatMemePOJO());
         mCardAdapter.addCardHolderToEnd(new HoroscopeCardHolder());
         

@@ -1,4 +1,4 @@
-package com.example.andresarango.automaticpancake.news.nytimes_horizant_rc;
+package com.example.andresarango.automaticpancake.news.horizontal_recyclerview;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

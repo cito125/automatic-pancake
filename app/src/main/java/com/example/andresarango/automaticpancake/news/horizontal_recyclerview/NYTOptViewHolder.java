@@ -1,19 +1,18 @@
-package com.example.andresarango.automaticpancake.news.nytimes_horizant_rc;
+package com.example.andresarango.automaticpancake.news.horizontal_recyclerview;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.andresarango.automaticpancake.R;
-import com.example.andresarango.automaticpancake.news.nytimes_network.NYTimesAPI;
-import com.example.andresarango.automaticpancake.news.nytimespojo.Article;
-import com.example.andresarango.automaticpancake.news.nytimespojo.Multimedium;
-import com.example.andresarango.automaticpancake.news.nytimespojo.Result;
+import com.example.andresarango.automaticpancake.news.network.NYTAPI;
+import com.example.andresarango.automaticpancake.news.model.Article;
+import com.example.andresarango.automaticpancake.news.model.Multimedium;
+import com.example.andresarango.automaticpancake.news.model.Result;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -34,7 +33,7 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder {
     TextView mAbstractTV;
     ImageView mArticlePic;
     @Inject
-    NYTimesAPI mNYTimmesAPI;
+    NYTAPI mNYTimmesAPI;
     String mURLOfArticle;
     Context mContext;
 
@@ -64,7 +63,7 @@ public class NYTOptViewHolder extends RecyclerView.ViewHolder {
     }
 
     private void runNYTimesAPI(String section) {
-        mNYTimmesAPI = NYTimesAPI.getInstance();
+        mNYTimmesAPI = NYTAPI.getInstance();
         if (section == null) {
             return;
         }

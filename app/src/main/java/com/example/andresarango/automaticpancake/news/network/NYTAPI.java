@@ -1,7 +1,7 @@
-package com.example.andresarango.automaticpancake.news.nytimes_network;
+package com.example.andresarango.automaticpancake.news.network;
 
 import com.example.andresarango.automaticpancake.BuildConfig;
-import com.example.andresarango.automaticpancake.news.nytimespojo.Article;
+import com.example.andresarango.automaticpancake.news.model.Article;
 import com.example.andresarango.automaticpancake.utility.networks.NetworkServices;
 
 import retrofit2.Call;
@@ -10,22 +10,22 @@ import retrofit2.Call;
  * Created by andresarango on 11/7/16.
  */
 
-public class NYTimesAPI {
+public class NYTAPI {
     private String BASE_NYTIMES_URL = "https://api.nytimes.com/";
     private String NYTIMES_TOP_ARTICLES_API_KEY = BuildConfig.NYTIMES_API_KEY;
-    private final NYTimesService apiService;
+    private final NYTService apiService;
 
-    private static NYTimesAPI instance;
+    private static NYTAPI instance;
 
-    public static NYTimesAPI getInstance() {
+    public static NYTAPI getInstance() {
         if (instance == null) {
-            instance = new NYTimesAPI();
+            instance = new NYTAPI();
         }
         return instance;
     }
 
-    private NYTimesAPI() {
-        apiService = (new NetworkServices()).getJSONService(BASE_NYTIMES_URL, NYTimesService.class);
+    private NYTAPI() {
+        apiService = (new NetworkServices()).getJSONService(BASE_NYTIMES_URL, NYTService.class);
     }
 
     public Call<Article> getSection(String section) {

@@ -1,4 +1,4 @@
-package com.example.andresarango.automaticpancake.news.nytimes_horizant_rc;
+package com.example.andresarango.automaticpancake.news.horizontal_recyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,7 +17,7 @@ import java.util.List;
  * Created by andresarango on 10/30/16.
  */
 
-public class NYTimesViewHolder extends CardViewHolder {
+public class NYTViewHolder extends CardViewHolder {
     Context mContext;
     private RecyclerView mNewsOptionRecycler;
     private List<String> mNewsOptionList = new ArrayList<String>(Arrays.asList("home",
@@ -47,7 +47,7 @@ public class NYTimesViewHolder extends CardViewHolder {
             "obituaries",
             "insider"));
 
-    public NYTimesViewHolder(View itemView) {
+    public NYTViewHolder(View itemView) {
         super(itemView);
         mContext = itemView.getContext();
         mNewsOptionRecycler = (RecyclerView) itemView.findViewById(R.id.nyt_news_op_recycle);

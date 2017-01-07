@@ -3,7 +3,7 @@ package com.example.andresarango.automaticpancake;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.example.andresarango.automaticpancake.news.nytimes_horizant_rc.NYTimesViewHolder;
+import com.example.andresarango.automaticpancake.news.horizontal_recyclerview.NYTViewHolder;
 
 /**
  * Created by andresarango on 11/10/16.
@@ -19,7 +19,7 @@ public class TouchMeHelperCallback extends ItemTouchHelper.Callback {
 
     @Override
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
-        if (viewHolder instanceof NYTimesViewHolder) {
+        if (viewHolder instanceof NYTViewHolder) {
             return 0;
         }
         int dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
