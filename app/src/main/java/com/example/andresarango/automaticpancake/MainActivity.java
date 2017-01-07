@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
 import com.example.andresarango.automaticpancake.cat.CatAPIPOJO.CatMemePOJO;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJOs.HoroscopePOJO;
+import com.example.andresarango.automaticpancake.horoscope.models.HoroscopeCardHolder;
 import com.example.andresarango.automaticpancake.news.NYTimesGoogleNowCardHolder;
 import com.example.andresarango.automaticpancake.reminder.RemindMe;
 import com.example.andresarango.automaticpancake.utility.networks.GoogleNowCardCall;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         mCardAdapter.addCardHolderToEnd(new RemindMe());
         mCardAdapter.addCardHolderToEnd(new NYTimesGoogleNowCardHolder());
         mCardAdapter.addCardHolderToEnd(new CatMemePOJO());
-        mCardAdapter.addCardHolderToEnd(new HoroscopePOJO());
+        mCardAdapter.addCardHolderToEnd(new HoroscopeCardHolder());
         
 
         makeNetworkListCall();

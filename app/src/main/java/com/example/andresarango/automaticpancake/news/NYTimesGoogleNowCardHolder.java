@@ -8,6 +8,9 @@ import com.example.andresarango.automaticpancake.news.nytimes_horizant_rc.NYTime
 import com.example.andresarango.automaticpancake.utility.GoogleNowCardHolder;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by andresarango on 10/30/16.
  */
@@ -19,4 +22,5 @@ public class NYTimesGoogleNowCardHolder implements GoogleNowCardHolder {
                 .from(parent.getContext())
                 .inflate(R.layout.aanyt_news_card, parent, false));
     }
+    
 }

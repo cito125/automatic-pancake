@@ -1,4 +1,4 @@
-package com.example.andresarango.automaticpancake.horoscope;
+package com.example.andresarango.automaticpancake.horoscope.views;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,9 +7,10 @@ import android.widget.Button;
 
 import com.example.andresarango.automaticpancake.R;
 import com.example.andresarango.automaticpancake.cat.CatCardViewHolder;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopeNetwork.HoroscopeService;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJOs.DisplayHoroscope;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJOs.HoroscopePOJO;
+import com.example.andresarango.automaticpancake.horoscope.HoroscopeFragment;
+import com.example.andresarango.automaticpancake.horoscope.models.DisplayHoroscopeCardHolder;
+import com.example.andresarango.automaticpancake.horoscope.models.HoroscopeCardHolder;
+import com.example.andresarango.automaticpancake.horoscope.network.HoroscopeService;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 import com.example.andresarango.automaticpancake.utility.networks.NetworkServices;
 
@@ -112,12 +113,12 @@ public class HoroscopeViewHolder extends CardViewHolder {
 
     public void getHoroscopeInfo(String sign) {
         NetworkServices networkServices = new NetworkServices();
-        HoroscopeService service = networkServices.getJSONService(HoroscopePOJO.HOROSCOPE_BASE_URL, HoroscopeService.class);
-        Call<DisplayHoroscope> call = service.getTodayHoroscope(sign);
-        call.enqueue(new Callback<DisplayHoroscope>() {
+        HoroscopeService service = networkServices.getJSONService(HoroscopeCardHolder.HOROSCOPE_BASE_URL, HoroscopeService.class);
+        Call<DisplayHoroscopeCardHolder> call = service.getTodayHoroscope(sign);
+        call.enqueue(new Callback<DisplayHoroscopeCardHolder>() {
             @Override
-            public void onResponse(Call<DisplayHoroscope> call, Response<DisplayHoroscope> response) {
-                DisplayHoroscope displayHoroscope = response.body();
+            public void onResponse(Call<DisplayHoroscopeCardHolder> call, Response<DisplayHoroscopeCardHolder> response) {
+                DisplayHoroscopeCardHolder displayHoroscope = response.body();
                 HoroscopeFragment horoscopeFragment = HoroscopeFragment.attainDisplayHoroscope(displayHoroscope);
 
                 ((Activity) mContext)
@@ -128,7 +129,7 @@ public class HoroscopeViewHolder extends CardViewHolder {
             }
 
             @Override
-            public void onFailure(Call<DisplayHoroscope> call, Throwable t) {
+            public void onFailure(Call<DisplayHoroscopeCardHolder> call, Throwable t) {
 
             }
         });

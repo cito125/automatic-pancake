@@ -1,5 +1,6 @@
-package com.example.andresarango.automaticpancake.horoscope;
+package com.example.andresarango.automaticpancake.horoscope.network;
 
+import com.example.andresarango.automaticpancake.horoscope.models.DisplayHoroscopeCardHolder;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -16,14 +17,14 @@ import retrofit2.http.Query;
 public interface HoroscopeService {
 
     @GET("/horoscope/today/{sign}")
-    Call<DisplayHoroscope> getTodayHoroscope(@Path("sign")String sunsign);
+    Call<DisplayHoroscopeCardHolder> getTodayHoroscope(@Path("sign")String sunsign);
 
     @GET("/horoscope/week/{sunsign}")
-    Call<DisplayHoroscope> getWeekHoroscope(@Query("sign")String sunsign);
+    Call<DisplayHoroscopeCardHolder> getWeekHoroscope(@Query("sign")String sunsign);
 
     @GET("/horoscope/month/{sunsign}")
-    Call<DisplayHoroscope> getMonthHoroscope(@Query("sign")String sunsign);
+    Call<DisplayHoroscopeCardHolder> getMonthHoroscope(@Query("sign")String sunsign);
 
     @GET("knowmore/{sunsign}")
-    Call<DisplayHoroscope> getMoreInfo(@Query("sign")String sunsign);
+    Call<DisplayHoroscopeCardHolder> getMoreInfo(@Query("sign")String sunsign);
 }

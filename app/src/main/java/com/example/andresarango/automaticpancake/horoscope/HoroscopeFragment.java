@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.andresarango.automaticpancake.R;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJOs.DisplayHoroscope;
+import com.example.andresarango.automaticpancake.horoscope.models.DisplayHoroscopeCardHolder;
 
 
 /**
@@ -41,12 +41,12 @@ public class HoroscopeFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            DisplayHoroscope displayHoroscope = (DisplayHoroscope) bundle.getSerializable(DISPLAY_HOROSCOPE_KEY);
+            DisplayHoroscopeCardHolder displayHoroscope = (DisplayHoroscopeCardHolder) bundle.getSerializable(DISPLAY_HOROSCOPE_KEY);
             bindViewHolder(displayHoroscope);
         }
     }
 
-    public static HoroscopeFragment attainDisplayHoroscope(DisplayHoroscope displayHoroscope) {
+    public static HoroscopeFragment attainDisplayHoroscope(DisplayHoroscopeCardHolder displayHoroscope) {
         Bundle bundle = new Bundle();
         bundle.putSerializable(DISPLAY_HOROSCOPE_KEY, displayHoroscope);
         HoroscopeFragment horoscopeFragment = new HoroscopeFragment();
@@ -55,8 +55,8 @@ public class HoroscopeFragment extends Fragment {
     }
 
 
-    private void bindViewHolder(DisplayHoroscope displayHoroscope) {
-        DisplayHoroscope horoscopePOJO = displayHoroscope;
+    private void bindViewHolder(DisplayHoroscopeCardHolder displayHoroscope) {
+        DisplayHoroscopeCardHolder horoscopePOJO = displayHoroscope;
         date.setText(horoscopePOJO.getDate());
         sunsign.setText(horoscopePOJO.getSunsign());
         horoscope.setText(horoscopePOJO.getHoroscope());

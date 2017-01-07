@@ -1,11 +1,11 @@
-package com.example.andresarango.automaticpancake.horoscope;
+package com.example.andresarango.automaticpancake.horoscope.views;
 
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.andresarango.automaticpancake.R;
-import com.example.andresarango.automaticpancake.horoscope.HoroscopePOJOs.DisplayHoroscope;
+import com.example.andresarango.automaticpancake.horoscope.models.DisplayHoroscopeCardHolder;
 import com.example.andresarango.automaticpancake.utility.CardViewHolder;
 
 /**
@@ -29,7 +29,7 @@ public class DisplayHoroscopeViewHolder extends CardViewHolder{
 
     @Override
     public void bindViewHolder(Object obj) {
-        DisplayHoroscope horoscopePOJO = (DisplayHoroscope) obj;
+        DisplayHoroscopeCardHolder horoscopePOJO = (DisplayHoroscopeCardHolder) obj;
         date.setText(horoscopePOJO.getDate());
         sunsign.setText(horoscopePOJO.getSunsign());
         horoscope.setText(horoscopePOJO.getHoroscope());
